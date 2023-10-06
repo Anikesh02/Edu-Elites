@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CreateCourse.css"; // Import your CSS file for styling
+import { uploadCourse } from '../../firebase';
 
 function CreateCourse() {
   const [courseTitle, setCourseTitle] = useState("");
@@ -33,7 +34,7 @@ function CreateCourse() {
   const handleCourseCreation = () => {
     try {
       if (!courseTitle || !courseDescription || !courseImage) {
-        throw new Error("Please fill in all fields and upload an image.");
+        throw new Error("Please fill in all fields and upload a video.");
       }
 
       // Create a new course object and add it to the array of courses
@@ -42,6 +43,7 @@ function CreateCourse() {
         description: courseDescription,
         image: courseImage,
       };
+      uploadCourse(newCourse);
 
       setCourses([...courses, newCourse]);
       setCourseTitle("");

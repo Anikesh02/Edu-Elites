@@ -72,5 +72,18 @@ async function logInUser(email, password) {
 }
 
 
-export { createUser, logInUser, auth };
+async function uploadCourse(course) {
+  try {
+    const courseRef = doc(db, 'courses', course.id);
+    await setDoc(courseRef, course);
+    return courseRef;
+  } catch (error) {
+    console.error("Error object:", error);
+    const errorMessage = error?.message || "An unknown error occurred";
+    throw new Error(errorMessage);
+  }
+}
+
+
+export { createUser, logInUser, auth , uploadCourse};
 export default app;

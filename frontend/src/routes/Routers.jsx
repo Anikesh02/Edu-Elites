@@ -6,6 +6,7 @@ import Signup from '../pages/Signup'
 import Contact from '../pages/Contact'
 import Doctors from '../pages/Hospitals/Hospitals'
 import DoctorDetails from '../pages/Hospitals/HospitalDetails'
+import StudentProfile from '../pages/StudentProfile'
 // import SidePanel from '../pages/Doctors/SidePanel'
 import Appointment from '../pages/Hospitals/Appointment'
 import {Routes, Route} from 'react-router-dom'
@@ -26,7 +27,7 @@ const Routers = () => {
     <Route path='/pricing' element={<PricingCard/>}></Route>
     <Route path='/appointment' element={<Appointment/>}></Route>
     <Route path='/payment' element={<Payment/>}></Route>
-
+    <Route path='/studentProfile' element={<StudentProfile/>}></Route>
     
   </Routes>
   

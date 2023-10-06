@@ -16,6 +16,7 @@
   }
   
   .course-card {
+    display: flex; /* Use flexbox to arrange content */
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
@@ -23,14 +24,25 @@
     background-color: #f9f9f9;
   }
   
-  .courses-container {
-    display: flex;
-    flex-wrap: wrap;
+  .course-details {
+    flex: 1; /* Take up remaining space */
+    padding: 10px;
   }
   
-  .course-card {
-    flex: 1;
-    min-width: calc(33.333% - 20px); /* To create a grid with 3 columns */
-    margin-right: 20px;
+  .course-media {
+    max-width: 200px; /* Adjust max-width as needed */
+    margin-right: 20px; /* Add margin to separate media and details */
   }
+  
+  .course-images img,
+  .course-videos video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .uploaded-files {
+    margin-top: 10px;
+  }
+  
+  /* Add additional styling as needed */
   

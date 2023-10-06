@@ -14,6 +14,8 @@ import Payment from '../pages/Hospitals/Payment'
 import PricingCard from '../components/PricingCard'
 import Dashboard from '../components/teacherDashboard/Dashboard'
 import CreateCourse from '../components/teacherDashboard/CreateCourse'
+import CourseDetail from '../components/teacherDashboard/CourseDetail'
+import CardApp from '../CardApp'
 
 
 const Routers = () => {
@@ -32,6 +34,8 @@ const Routers = () => {
     <Route path='/dashboard' element={<Dashboard/>}></Route>
     <Route path='/create-course' element={<CreateCourse/>}></Route>
     <Route path='/studentProfile' element={<StudentProfile/>}></Route>
+    <Route path='/cardapp' element={<CardApp/>}></Route>
+    
     
   </Routes>
   

@@ -5,8 +5,8 @@ const SidePanel = () => {
   return (
     <div className='shadow-panelShadow p-3 lg:p-5 rounded-md'>
         <div className="flex items-center justify-between">
-            <p className="text__para mt-0 font-semibold">Ticket Price</p>
-            <span className='text-[16px] leading-7 lg:text-22px] lg:leading-8 text-headingColor font-bold'>500 INR</span>
+            <p className="text__para mt-0 font-semibold">Course Price</p>
+            <span className='text-[16px] leading-7 lg:text-22px] lg:leading-8 text-headingColor font-bold'>INR 2999</span>
         </div>
         <div className="mt-[30px]">
                 <p className="text__para mt-0 font-semibold text-headingColor">Available Time Slots:</p>
@@ -27,7 +27,7 @@ const SidePanel = () => {
             </div>
             {/* <button className="btn px-2 w-full rounded-md">Book Appointment</button> */}
             
-            <Link to='/appointment'><button className="btn px-2 w-full rounded-md">Book Appointment</button></Link>
+            <Link to='/appointment'><button className="btn px-2 w-full rounded-md">Enroll Now</button></Link>
     </div>
   )
 }

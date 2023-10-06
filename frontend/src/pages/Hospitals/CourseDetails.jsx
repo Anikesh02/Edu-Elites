@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import doctorImg from '../../assets/images/doctor-img02.png'
 import starIcon from '../../assets/images/Star.png'
-import DoctorAbout from './HospitalAbout'
+import DoctorAbout from './CourseAbout'
 import Feedback from './Feedback'
 import SidePanel from './SidePanel'
 import video1 from '../../assets/images/vid-1.mp4'
@@ -28,7 +28,7 @@ const DoctorDetails = () => {
                INR 2999
               </span>
               
-              <h3 className='text-headingColor text-[22px] leading-9 mt-3 font-bold'>Web Development</h3>
+              <h3 className='text-headingColor text-[22px] leading-9 mt-3 font-bold'>App Development</h3>
               <div className="flex items-center gap-[6px]">
                 <span className="flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-headingColor">
                   <img src={starIcon} alt="" />4.8
@@ -37,7 +37,7 @@ const DoctorDetails = () => {
               </div>
 
               <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px]'>
-              New Marine Lines, Marine Lines, Mumbai.
+              Ramesh Kulkarni.
               </p>
             </div>
           </div>

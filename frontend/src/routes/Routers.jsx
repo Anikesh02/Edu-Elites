@@ -5,10 +5,10 @@ import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Contact from '../pages/Contact'
 import Doctors from '../pages/Hospitals/Hospitals'
-import DoctorDetails from '../pages/Hospitals/HospitalDetails'
+import DoctorDetails from '../pages/Hospitals/CourseDetails'
 import StudentProfile from '../pages/StudentProfile'
 // import SidePanel from '../pages/Doctors/SidePanel'
-import Appointment from '../pages/Hospitals/Appointment'
+import Appointment from '../pages/Hospitals/Enrollment'
 import {Routes, Route} from 'react-router-dom'
 import Payment from '../pages/Hospitals/Payment'
 import PricingCard from '../components/PricingCard'
@@ -16,6 +16,7 @@ import Dashboard from '../components/teacherDashboard/Dashboard'
 import CreateCourse from '../components/teacherDashboard/CreateCourse'
 import CourseDetail from '../components/teacherDashboard/CourseDetail'
 import CardApp from '../CardApp'
+import TestApp from '../components/TestApp/TestApp'
 
 
 const Routers = () => {
@@ -35,6 +36,8 @@ const Routers = () => {
     <Route path='/create-course' element={<CreateCourse/>}></Route>
     <Route path='/studentProfile' element={<StudentProfile/>}></Route>
     <Route path='/cardapp' element={<CardApp/>}></Route>
+    <Route path='/test' element={<TestApp/>}></Route>
+
     
     
   </Routes>

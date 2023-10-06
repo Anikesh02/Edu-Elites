@@ -5,7 +5,7 @@ import heroImg03 from '../assets/images/hero-img03.png'
 import icon01 from '../assets/images/icon01.png'
 import icon02 from '../assets/images/icon02.png'
 import icon03 from '../assets/images/icon03.png'
-import featureImg from '../assets/images/feature-img.jpg'
+import featureImg from '../assets/images/feature-img.png'
 import videoIcon from '../assets/images/video-icon.png'
 import avatarIcon from '../assets/images/avatar-icon.png'
 import faqImg from '../assets/images/faq-img.png'
@@ -169,13 +169,13 @@ const Home = () => {
               </h2>
               <ul className="pl-4">
                 <li className="text__para">
-                  1. Schedule the appointment directly.
+                  1. Schedule the course directly.
                 </li>
                 <li className="text__para">
-                  2. Select the type of treatment and search for nearby Hospital.
+                  2. Select the type of course.
                 </li>
                 <li className="text__para">
-                  3. Book Appointment for treatment using online scheduling tool.
+                  3. Book course and start learning using our online platform tools.
                 </li>
               </ul>
               <Link to='/services'><button className="btn">Learn More</button></Link>
@@ -219,7 +219,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our Top Hospitals For Best Services</h2>
+            <h2 className="heading text-center">Our Top Courses</h2>
             <p className="text__para text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates aspernatur ex, amet.</p>
           </div>
 

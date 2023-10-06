@@ -1,9 +1,8 @@
-import doctorImg01 from "../images/doctor-img01.png";
+import doctorImg01 from "../images/doctor-img01.jpg";
 import doctorImg02 from "../images/doctor-img02.png";
-import doctorImg03 from "../images/doctor-img03.png";
-import hospitalImg04 from "../images/hospital-img04.png"
-import hospitalImg05 from "../images/hospital-img05.png"
-import hospitalImg06 from "../images/hospital-img06.png"
+import doctorImg03 from "../images/doctor-img03.jpg";
+import blockchain from "../images/blockchain.jpg"
+
 
 
 
@@ -11,8 +10,8 @@ import hospitalImg06 from "../images/hospital-img06.png"
 export const doctors = [
   {
     id: "01",
-    name: "Global Hospital",
-    specialization: "Cancer Care",
+    name: "Web Development",
+    specialization: " INR 2999",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg01,
@@ -21,8 +20,8 @@ export const doctors = [
   },
   {
     id: "02",
-    name: "Kohinoor Hospital",
-    specialization: "Dialysis",
+    name: "App Development",
+    specialization: "INR 2999",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg02,
@@ -31,21 +30,21 @@ export const doctors = [
   },
   {
     id: "03",
-    name: "Shri Ramchandra Hospital",
-    specialization: "Dermatologist",
+    name: "AI/ML",
+    specialization: "INR 2499",
     avgRating: 4.8,
     totalRating: 272,
-    photo: hospitalImg05,
+    photo: doctorImg03,
     totalPatients: 1500,
     hospital: "Sakinaka Road, Andheri East, Mumbai.",
   },
   {
     id: "04",
-    name: "Yashoda Hospital",
-    specialization: "Heart & Vascular",
+    name: "Blockchain",
+    specialization: "INR 1999",
     avgRating: 4.8,
     totalRating: 272,
-    photo: hospitalImg04,
+    photo: blockchain,
     totalPatients: 1500,
     hospital: "New Marine Lines, Marine Lines, Mumbai.",
   },
@@ -59,16 +58,7 @@ export const doctors = [
     totalPatients: 1500,
     hospital: "Mumbai Central, Mumbai.",
   },
-  {
-    id: "06",
-    name: "Lotus Hospital",
-    specialization: "Neurology",
-    avgRating: 4.8,
-    totalRating: 272,
-    photo: hospitalImg06,
-    totalPatients: 1500,
-    hospital: "Boivali Railway Station, Borivali East, Mumbai.",
-  },
+  
 
   
 ];

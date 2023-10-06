@@ -12,6 +12,8 @@ import Appointment from '../pages/Hospitals/Appointment'
 import {Routes, Route} from 'react-router-dom'
 import Payment from '../pages/Hospitals/Payment'
 import PricingCard from '../components/PricingCard'
+import Dashboard from '../components/teacherDashboard/Dashboard'
+import CreateCourse from '../components/teacherDashboard/CreateCourse'
 
 
 const Routers = () => {
@@ -27,6 +29,12 @@ const Routers = () => {
     <Route path='/pricing' element={<PricingCard/>}></Route>
     <Route path='/appointment' element={<Appointment/>}></Route>
     <Route path='/payment' element={<Payment/>}></Route>
+    <Route path='/dashboard' element={<Dashboard/>}></Route>
+    <Route path='/create-course' element={<CreateCourse/>}></Route>
+
+    
+
+    
     <Route path='/studentProfile' element={<StudentProfile/>}></Route>
     
   </Routes>

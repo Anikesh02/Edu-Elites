@@ -1,0 +1,36 @@
+.create-course-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  input[type="text"],
+  textarea,
+  button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .course-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .courses-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .course-card {
+    flex: 1;
+    min-width: calc(33.333% - 20px); /* To create a grid with 3 columns */
+    margin-right: 20px;
+  }
+  

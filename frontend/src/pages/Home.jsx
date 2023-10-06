@@ -52,10 +52,10 @@ const Home = () => {
             <div>
               <div className='lg:w-[570px]'>
                 <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>Hello, {user?.name ? user.name : 'User'}.</h1>
-                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help our elders live a healthy, longer life.</h1>
+                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help our students to achieve their dream college and great life.</h1>
                 <p className='text__para'>
-                EldCare was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.</p>
-                <Link to='/appointment'><button className='btn'>Select Course</button></Link>
+                Educare was founded on a better model of care one designed around students needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.</p>
+                <Link to='/appointment'><button className='btn'>Select Courses</button></Link>
 
               </div>
 
@@ -103,7 +103,7 @@ const Home = () => {
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
             <h2 className='heading text-center'>Providing the best courses</h2>
-            <p className='text__para text-center'>World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
+            <p className='text__para text-center'>World-class care for elders. Our Health Service offers unmatched, expert teachers care.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
@@ -113,7 +113,7 @@ const Home = () => {
                 <img src={icon01} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Service</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Course</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
 
                 <Link to='/services' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
@@ -127,7 +127,7 @@ const Home = () => {
                 <img src={icon02} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find courses</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Buy courses</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
 
                 <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
@@ -141,7 +141,7 @@ const Home = () => {
                 <img src={icon03} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Book Appointment</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Learn</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
 
                 <Link to='/appointment' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
@@ -165,7 +165,7 @@ const Home = () => {
             {/* Feature Content   */}
             <div className="xl:w-[670px]">
               <h2 className="heading">
-                Get proper treatment <br /> anytime.
+                Get proper guidance <br /> anytime.
               </h2>
               <ul className="pl-4">
                 <li className="text__para">

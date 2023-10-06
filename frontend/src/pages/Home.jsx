@@ -55,7 +55,7 @@ const Home = () => {
                 <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help our elders live a healthy, longer life.</h1>
                 <p className='text__para'>
                 EldCare was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.</p>
-                <Link to='/appointment'><button className='btn'>Select Courses</button></Link>
+                <Link to='/appointment'><button className='btn'>Select Course</button></Link>
 
               </div>
 

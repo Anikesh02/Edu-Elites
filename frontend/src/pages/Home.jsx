@@ -13,13 +13,14 @@ import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 import About from '../components/About/About'
 import ServiceList from '../components/Services/ServiceList'
-import DoctorList from '../components/Hospitals/CourseList'
+import DoctorList from '../components/Course/CourseList'
 import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonials/Testimonial'
 import { useEffect } from 'react'
 import { useUser } from '../UserContext'
 import { auth } from '../firebase.js';
 import { onAuthStateChanged } from 'firebase/auth';
+import { getParameters } from '../firebase.js';
 
 
 const Home = () => {
@@ -30,7 +31,10 @@ const Home = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, displayName, photoURL, email } = user;
-        updateUser({ uid, name: displayName, photoURL, email });
+
+        getParameters(user.uid).then((data) => {
+          updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role });
+        });
       } else {
         updateUser(null);
       }

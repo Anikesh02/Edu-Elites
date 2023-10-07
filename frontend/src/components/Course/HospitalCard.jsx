@@ -3,7 +3,7 @@ import starIcon from '../../assets/images/Star.png'
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 
-const DoctorCard = ({ doctor }) => {
+const HospitalCard = ({ doctor }) => {
 
     const { name, avgRating, totalRating, photo, specialization, totalPatients, hospital } = doctor
 
@@ -38,4 +38,4 @@ const DoctorCard = ({ doctor }) => {
     )
 }
 
-export default DoctorCard
+export default HospitalCard

@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from '../pages/Home'
-import Services from '../pages/Courses'
+// import Services from '../pages/Courses'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Contact from '../pages/Contact'
@@ -12,7 +12,7 @@ import Appointment from '../pages/Hospitals/Enrollment'
 import {Routes, Route} from 'react-router-dom'
 import Payment from '../pages/Hospitals/Payment'
 import PricingCard from '../components/PricingCard'
-import Dashboard from '../components/teacherDashboard/Dashboard'
+import Dashboard from '../components/Dashboard/Dashboard'
 import CreateCourse from '../components/teacherDashboard/CreateCourse'
 import CourseDetail from '../components/teacherDashboard/CourseDetail'
 import CardApp from '../CardApp'
@@ -31,7 +31,7 @@ const Routers = () => {
     <Route path='/login' element={<Login/>}></Route>
     <Route path='/register' element={<Signup/>}></Route>
     <Route path='/contact' element={<Contact/>}></Route>
-    <Route path='/services' element={<Services/>}></Route>
+    {/* <Route path='/services' element={<Services/>}></Route> */}
     <Route path='/pricing' element={<PricingCard/>}></Route>
     <Route path='/appointment' element={<Appointment/>}></Route>
     <Route path='/payment' element={<Payment/>}></Route>
@@ -41,6 +41,10 @@ const Routers = () => {
     <Route path='/cardapp' element={<CardApp/>}></Route>
     <Route path='/test' element={<TestApp/>}></Route>
     <Route path='/charts' element={<Piechart/>}></Route>
+    <Route path='/dashboard' element={<Dashboard/>}></Route>
+    
+
+
 
 
     

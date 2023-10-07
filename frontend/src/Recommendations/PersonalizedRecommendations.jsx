@@ -81,26 +81,6 @@ function PersonalizedRecommendations() {
   }, [updateUser]);
 
 
-  const [recommendations, setRecommendations] = useState([]);
-
-  // setLearningType(user?.learningType)
-  console.log(user?.learningStyle)
-
-  let ls = ""
-
-  if(user!=null){
-    ls = user.learningStyle;
-  }  
-  const getPersonalizedRecommendations = ({ ls }) => {
-    // Filter courses by learning type
-    const learningTypeCourses = coursesData.filter((course) => course.learning_type == ls);
-
-    // Dummy calculation for recommendations (you can replace this with your actual logic)
-    const recommendedCourses = learningTypeCourses.slice(0, 3); // Just take the first 3 for demonstration
-
-    setRecommendations(recommendedCourses);
-  };
-
   return (
     <div>
       <button onClick={() => getPersonalizedRecommendations(ls)}>

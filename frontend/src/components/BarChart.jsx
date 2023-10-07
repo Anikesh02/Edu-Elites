@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import Linechart from "./LineChart";
+// import Linechart from "./LineChart";
 
 function Barchart() {
   return (
@@ -14,7 +14,7 @@ function Barchart() {
           height={500}
           series={[
             {
-              // name: "Social Media Subscriber",
+              
               data: [65, 67, 32, 98, 23, 51, 24],
             },
           ]}
@@ -29,7 +29,7 @@ function Barchart() {
               style: { fontSize: 18 },
             },
 
-            colors: ["#f90000"],
+            colors: ["#0000FF"],
             theme: { mode: "light" },
 
             xaxis: {
@@ -45,7 +45,7 @@ function Barchart() {
               ],
               title: {
                 text: "Your Progress",
-                style: { color: "#f90000", fontSize: 30 },
+                style: { color: "#000", fontSize: 30 },
               },
             },
 
@@ -54,11 +54,11 @@ function Barchart() {
                 formatter: (val) => {
                   return `${val}`;
                 },
-                style: { fontSize: "15", colors: ["#f90000"] },
+                style: { fontSize: "15", colors: ["#000"] },
               },
               title: {
                 text: "Marks",
-                style: { color: "#f90000", fontSize: 15 },
+                style: { color: "#000", fontSize: 15 },
               },
             },
 
@@ -78,7 +78,7 @@ function Barchart() {
             },
           }}
         ></Chart>
-        <Barchart/>
+        
        
       </div>
     </React.Fragment>

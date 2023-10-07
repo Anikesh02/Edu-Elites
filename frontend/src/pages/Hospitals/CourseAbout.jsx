@@ -1,7 +1,7 @@
 import React from 'react'
 import { formateDate } from '../../utils/formateDate'
 
-const DoctorAbout = () => {
+const CourseAbout = () => {
   return <div>
     <div>
         <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
@@ -63,4 +63,4 @@ const DoctorAbout = () => {
   
 }
 
-export default DoctorAbout
+export default CourseAbout

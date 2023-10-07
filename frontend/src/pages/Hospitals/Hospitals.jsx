@@ -1,5 +1,5 @@
 import React from 'react'
-import DoctorCard from '../../components/Hospitals/HospitalCard'
+import DoctorCard from '../../components/Course/HospitalCard'
 import {doctors} from '../../assets/data/courses'
 import Testimonial from '../../components/Testimonials/Testimonial'
 import {getCourses} from '../../firebase.js'
@@ -50,7 +50,7 @@ const Doctors = () => {
   <section>
       <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">What our patient say</h2>
+            <h2 className="heading text-center">What our Student's say</h2>
             <p className="text__para text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates aspernatur ex, amet.</p>
         </div>
 

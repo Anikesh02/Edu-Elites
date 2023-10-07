@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useUser } from '../UserContext.jsx';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -41,6 +41,28 @@ const coursesData = [
 
 function PersonalizedRecommendations() {
   const { user, updateUser } = useUser();
+  const [ls, setLearningStyle] = useState('');
+  const [recommendations, setRecommendations] = useState([]);
+  const learningTypeCourses = [];
+
+
+  const getPersonalizedRecommendations = (learningType) => {
+    // Filter courses by learning type
+    console.log(learningType);
+
+    for (const course of coursesData) {
+      if (course.learning_type.toLowerCase() == learningType.toLowerCase()) {
+        learningTypeCourses.push(course);
+      }
+    }
+  
+    // Take the first 3 matching courses for recommendations
+    const recommendedCourses = learningTypeCourses.slice(0, 3);
+
+    setRecommendations(recommendedCourses);
+  }
+  console.log(recommendations);
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -49,6 +71,7 @@ function PersonalizedRecommendations() {
 
         getParameters(user.uid).then((data) => {
           updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role, learningStyle: data.learningStyle });
+          setLearningStyle(data.learningStyle);
         });
       } else {
         updateUser(null);
@@ -58,47 +81,21 @@ function PersonalizedRecommendations() {
   }, [updateUser]);
 
 
-  const [recommendations, setRecommendations] = useState([]);
-
-  // setLearningType(user?.learningType)
-  console.log(user?.learningStyle)
-
-  let ls = ""
-
-  if(user!=null){
-    ls = user.learningStyle;
-  }  
-  const getPersonalizedRecommendations = ({ ls }) => {
-    // Filter courses by learning type
-    const learningTypeCourses = coursesData.filter((course) => course.learning_type == ls);
-
-    // Dummy calculation for recommendations (you can replace this with your actual logic)
-    const recommendedCourses = learningTypeCourses.slice(0, 3); // Just take the first 3 for demonstration
-
-    setRecommendations(recommendedCourses);
-  };
-
   return (
     <div>
-      <label>
-        Enter your learning type:
-        <input
-          type="text"
-          value={ls}
-          onChange={(e) => setLearningType(e.target.value)}
-        />
-      </label>
       <button onClick={() => getPersonalizedRecommendations(ls)}>
         Get Recommendations
       </button>
       <h2>Personalized Recommendations for {ls} Learner:</h2>
       <ul>
-        {recommendations.map((course) => (
-          <li key={course.course_id}>{course.title}</li>
-        ))}
+        {
+          recommendations.map((course) => (
+            <li key={course.course_id}>{course.title}</li>
+          ))}
       </ul>
     </div>
   );
 }
+
 
 export default PersonalizedRecommendations;

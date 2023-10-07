@@ -82,15 +82,15 @@ function PersonalizedRecommendations() {
 
 
   return (
-    <div>
-      <button onClick={() => getPersonalizedRecommendations(ls)}>
+    <div className='container w-[600px]'>
+      <h2 className='mb-5 text-center text-[22px]'>Personalized Recommendations for {ls} Learner:</h2>
+      <button className='btn mb-5' onClick={() => getPersonalizedRecommendations(ls)}>
         Get Recommendations
       </button>
-      <h2>Personalized Recommendations for {ls} Learner:</h2>
       <ul>
         {
           recommendations.map((course) => (
-            <li key={course.course_id}>{course.title}</li>
+            <li className='text-center text-[16px] mb-5' key={course.course_id}>{course.title}</li>
           ))}
       </ul>
     </div>

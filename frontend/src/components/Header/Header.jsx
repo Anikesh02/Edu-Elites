@@ -4,10 +4,6 @@ import userImg from '../../assets/images/avatar-icon.png'
 import { NavLink, Link } from 'react-router-dom'
 import {BiMenu} from 'react-icons/bi';
 import { useUser } from '../../UserContext.jsx';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth, getParameters } from '../../firebase.js';
-
-
 
 
 

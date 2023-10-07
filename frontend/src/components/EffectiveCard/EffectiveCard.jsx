@@ -7,12 +7,12 @@ const EffectiveCard = () => {
     <div className="container">
       <div className="topic left">
         <div className="content">
-          <h2 className='heading text-center'>Adaptive Learning</h2>
-          <p className='text__para text-center'>
+          <h2 className='heading'>Adaptive Learning</h2>
+          <p className='text__para'>
             Adaptive learning is a feature that tailors the educational content and difficulty level to the individual needs and progress of each student. It utilizes artificial intelligence (AI) algorithms to assess a student's current knowledge, learning style, and proficiency in different topics. By dynamically adjusting the content, it optimizes the learning efficiency and helps students grasp concepts at their own pace.
           </p>
         </div>
-        <img className='w-[250px] h-[250px]' src={adaptive} alt="Adaptive Learning GIF" />
+        <img className='w-[360px] h-[360px]' src={adaptive} alt="Adaptive Learning GIF"  />
       </div>
 
       <div className="topic right">

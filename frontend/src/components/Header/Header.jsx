@@ -3,32 +3,76 @@ import logo from '../../assets/images/logo.png'
 import userImg from '../../assets/images/avatar-icon.png'
 import { NavLink, Link } from 'react-router-dom'
 import {BiMenu} from 'react-icons/bi';
+import { useUser } from '../../UserContext.jsx';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth, getParameters } from '../../firebase.js';
 
-const navLinks = [
-  {
-    path: "/home",
-    display: "Home",
-  },
-  {
-    path: "/doctors",
-    display: "Explore",
-  },
-  {
-    path: "/myCourses",
-    display: "My Courses",
-  },
-  {
-    path: "/test",
-    display: "Take Test",
-  },
-  {
-    path: "/studentProfile",
-    display: "Your Progress",
-  },
-];
+
+
 
 
 const Header = () => {
+
+  const { user, updateUser } = useUser();
+
+  
+  let navLinks = [
+    {
+      path: "/home",
+      display: "Home",
+    },
+    {
+      path: "/doctors",
+      display: "Explore",
+    },
+    {
+      path: "/myCourses",
+      display: "My Courses",
+    },
+    {
+      path: "/test",
+      display: "Take Test",
+    },
+    {
+      path: "/charts",
+      display: "Your Progress",
+    },
+  ];
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, displayName, photoURL, email } = user;
+
+        getParameters(user.uid).then((data) => {
+          updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role, learningStyle: data.learningStyle });
+        });
+      } else {
+        updateUser(null);
+      }
+    });
+    return () => unsubscribe();
+  }, [updateUser]);
+
+  if (user) {
+    if (user.role != "Student") {
+      navLinks = [
+        {
+          path: "/home",
+          display: "Home",
+        },
+        {
+          path: "/myCourses",
+          display: "My Courses",
+        },
+        {
+          path: "/create-course",
+          display: "Create Course",
+        }
+
+      ];
+  }
+}
 
   const headerRef = useRef(null)
   const menuRef = useRef(null)
@@ -93,8 +137,4 @@ const Header = () => {
 
 }
 
-export default Header
-
-
-
-// npm run dev 
+export default Header;

@@ -118,5 +118,8 @@ async function uploadCourse(course) {
 }
 
 
-export { createUser, logInUser, auth , uploadCourse, getParameters};
+const updateCollection = (docRef, data) => updateDoc(doc(db, 'users', docRef), data);
+
+
+export { createUser, logInUser, auth , uploadCourse, getParameters, updateCollection, db};
 export default app;

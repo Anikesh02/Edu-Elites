@@ -10,6 +10,16 @@ function CreateCourse() {
     const [courseImages, setCourseImages] = useState([]);
     const [courseVideos, setCourseVideos] = useState([]);
     const [courses, setCourses] = useState([]); // Array to store multiple courses
+    const [quizData, setQuizData] = useState({
+        question: '',
+        option1: '',
+        option2: '',
+        option3: '',
+        option4: '',
+        correct_ans: '',
+        difficulty: ''
+    })
+
 
     const handleCourseTitleChange = (e) => {
         setCourseTitle(e.target.value);
@@ -17,6 +27,15 @@ function CreateCourse() {
 
     const handleCourseDescriptionChange = (e) => {
         setCourseDescription(e.target.value);
+    };
+
+    const handleInputChange = (e) => {
+        setQuizData({ ...quizData, [e.target.name]: e.target.value });
+    };
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        setQuizData(quizData);
     };
 
     const handleFileUpload = (e) => {
@@ -79,21 +98,37 @@ function CreateCourse() {
                 description: courseDescription,
                 images: courseImages,
                 videos: courseVideos,
+                quiz: {
+                    questions: quizData, // Add quiz questions here
+                    // Add other quiz-related properties as needed
+                },
             };
-            console.log(newCourse)
+            console.log(newCourse);
+
+            // You can add quiz questions to the newCourse.quiz.questions array based on your logic
+
             uploadCourse(newCourse).then(() => {
                 console.log("Course uploaded successfully");
             });
+
+
+
+
 
             setCourses([...courses, newCourse]);
             setCourseTitle("");
             setCourseDescription("");
             setCourseImages([]);
             setCourseVideos([]);
+
+
+
+
         } catch (error) {
             console.error(error.message);
         }
     };
+
 
     return (
         <div>
@@ -193,24 +228,24 @@ function CreateCourse() {
             <section>
                 <div className="container">
                     <h1>Quiz Maker</h1>
-                    <form id="quiz-form">
+                    <form id="quiz-form" onSubmit={submitHandler}>
                         <div className="question">
                             <label htmlFor="question-text">Question:</label>
-                            <input type="text" id="question-text" name="question" required />
+                            <input type="text" id="question-text" name="question" required onChange={handleInputChange} />
                         </div>
                         <div className="answer-section">
                             <label htmlFor="option1">Option 1:</label>
-                            <input type="text" id="option1" name="options" required />
+                            <input type="text" id="option1" name="options" required onChange={handleInputChange} />
                             <label htmlFor="option2">Option 2:</label>
-                            <input type="text" id="option2" name="options" required />
+                            <input type="text" id="option2" name="options" required onChange={handleInputChange} />
                             <label htmlFor="option3">Option 3:</label>
-                            <input type="text" id="option3" name="options" required />
+                            <input type="text" id="option3" name="options" required onChange={handleInputChange} />
                             <label htmlFor="option4">Option 4:</label>
-                            <input type="text" id="option4" name="options" required />
+                            <input type="text" id="option4" name="options" required onChange={handleInputChange} />
                         </div>
                         <div className="correct-answer">
                             <label htmlFor="correct-answer">Correct Answer:</label>
-                            <select id="correct-answer" name="correct-answer" required>
+                            <select id="correct-answer" name="correct-answer" required onChange={handleInputChange}>
                                 <option value="option1">Option 1</option>
                                 <option value="option2">Option 2</option>
                                 <option value="option3">Option 3</option>
@@ -218,19 +253,19 @@ function CreateCourse() {
                             </select>
                         </div>
                         <div className="difficulty-level">
-                            <label htmlFor="difficulty">Difficulty Level:</label>
-                            <select id="difficulty" name="difficulty" required>
+                            <label htmlFor="difficulty" >Difficulty Level:</label>
+                            <select id="difficulty" name="difficulty" required onChange={handleInputChange} >
                                 <option value="easy">Easy</option>
                                 <option value="intermediate">Intermediate</option>
                                 <option value="hard">Hard</option>
                             </select>
                         </div>
-                        <button type="submit">Add Question</button>
+                        <button type="submit">Done</button>
+                        <button>Add Question</button>
                     </form>
                 </div>
-                <div id="quiz-preview">
-                    <h2>Quiz Preview</h2>
-                </div>
+
+
             </section>
             <div className="space-y-4">
                 <button
@@ -240,51 +275,14 @@ function CreateCourse() {
                 </button>
                 {/* Add other elements or details on the right side */}
             </div>
-        <section>
-        <div className="container">
-          <h1>Quiz Maker</h1>
-          <form id="quiz-form">
-            <div className="question">
-              <label htmlFor="question-text">Question:</label>
-              <input type="text" id="question-text" name="question" required />
-            </div>
-            <div className="answer-section">
-              <label htmlFor="option1">Option 1:</label>
-              <input type="text" id="option1" name="options" required />
-              <label htmlFor="option2">Option 2:</label>
-              <input type="text" id="option2" name="options" required />
-              <label htmlFor="option3">Option 3:</label>
-              <input type="text" id="option3" name="options" required />
-              <label htmlFor="option4">Option 4:</label>
-              <input type="text" id="option4" name="options" required />
-            </div>
-            <div className="correct-answer">
-              <label htmlFor="correct-answer">Correct Answer:</label>
-              <select id="correct-answer" name="correct-answer" required>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-                <option value="option4">Option 4</option>
-              </select>
-            </div>
-            <div className="difficulty-level">
-              <label htmlFor="difficulty">Difficulty Level:</label>
-              <select id="difficulty" name="difficulty" required>
-                <option value="easy">Easy</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="hard">Hard</option>
-              </select>
-            </div>
-            <button type="submit">Add Question</button>
-          </form>
+            <section>
+
+            </section>
         </div>
-        <div id="quiz-preview">
-          <h2>Quiz Preview</h2>
-        </div>
-      </section>
-      </div>
 
     );
 }
+
+
 
 export default CreateCourse;

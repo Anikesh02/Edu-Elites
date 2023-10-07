@@ -5,7 +5,7 @@ import Chart from "react-apexcharts";
 function Barchart() {
   return (
     <React.Fragment>
-      <div className="container-fluid mb-5">
+      <div className="container-fluid mb-5 ml-[450px] sm: ml-[50px]">
         {/* <h3 className="text-center mt-3 mb-3">Bar Chart in ReactJS</h3> */}
 
         <Chart
@@ -20,8 +20,8 @@ function Barchart() {
           ]}
           options={{
             title: {
-              text: "BarChar",
-              style: { fontSize: 30 },
+              text: "BarChart",
+              style: { fontSize: 20 },
             },
 
             subtitle: {
@@ -45,7 +45,7 @@ function Barchart() {
               ],
               title: {
                 text: "Your Progress",
-                style: { color: "#000", fontSize: 30 },
+                style: { color: "#000", fontSize: 20 },
               },
             },
 

@@ -193,7 +193,7 @@ const Home = () => {
             </div>
 
             <div className="w-full md:w-1/2">
-              <h2 className='heading'>Most Questions by our beloved patients</h2>
+              <h2 className='heading'>Most Questions by our beloved Students</h2>
               <FaqList />
             </div>
           </div>

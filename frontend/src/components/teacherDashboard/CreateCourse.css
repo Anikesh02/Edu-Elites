@@ -14,6 +14,12 @@
     margin-bottom: 10px;
     width: 100%;
   }
+  .font-semibold{
+    font-weight: 800;
+    text-align: center;
+    font-size: 45px;
+    font-family: serif;
+  }
   
   .course-card {
     display: flex; /* Use flexbox to arrange content */

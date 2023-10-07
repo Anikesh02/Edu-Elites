@@ -100,7 +100,7 @@ function CreateCourse() {
         <div>
             <div className="container mx-auto mt-8">
                 <h2 className="text-2xl font-semibold mb-4">Create Course</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
                     <div>
                         <input
                             type="text"
@@ -109,12 +109,29 @@ function CreateCourse() {
                             value={courseTitle}
                             onChange={handleCourseTitleChange}
                         />
+                        
+                        <div className="LearningStyle">
+                        <label htmlFor="Learningstyle" >Learning Style:</label>
+                        <select id="Learningstyle" name="LearningStyle" required onChange={handleInputChange} >
+                            <option value="Auditory">Auditory</option>
+                            <option value="Visual">Visual</option>
+                            <option value="Written">Written</option>
+                        </select>
+                        
+                            {/* type="text"
+                            placeholder="Learning Style"
+                            className="w-full border rounded-md p-2 mb-4"
+                            value={courseTitle}
+                            onChange={handleCourseTitleChange} */}
+                        
+                        </div>
                         <textarea
                             placeholder="Course Description"
                             className="w-full border rounded-md p-2"
                             value={courseDescription}
                             onChange={handleCourseDescriptionChange}
                         />
+                        <p9>*Add Thumbnail and Video</p9><br></br>
                         <input
                             type="file"
                             accept="image/*, video/*"
@@ -132,7 +149,7 @@ function CreateCourse() {
                         
                     </div>
 
-                </div>
+                
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     {courses.map((course, index) => (

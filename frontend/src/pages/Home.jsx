@@ -22,6 +22,7 @@ import { useUser } from '../UserContext'
 import { auth } from '../firebase.js';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getParameters } from '../firebase.js';
+import EffectiveCard from '../components/EffectiveCard/EffectiveCard'
 
 
 const Home = () => {
@@ -166,56 +167,7 @@ const Home = () => {
       {/* Feature Section  */}
       <section>
         <div className="container">
-          <div className="flex items-center justify-between flex-col lg:flex-row">
-            {/* Feature Content   */}
-            <div className="xl:w-[670px]">
-              <h2 className="heading">
-                Get proper guidance <br /> anytime.
-              </h2>
-              <ul className="pl-4">
-                <li className="text__para">
-                  1. Schedule the course directly.
-                </li>
-                <li className="text__para">
-                  2. Select the type of course.
-                </li>
-                <li className="text__para">
-                  3. Book course and start learning using our online platform tools.
-                </li>
-              </ul>
-              <Link to='/services'><button className="btn">Learn More</button></Link>
-            </div>
-            {/* Feature img  */}
-            <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0 items-center">
-              <img src={featureImg} className='w-full items-center justify-between' alt="" />
-              {/* <div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
-                <div className="flex items-center justify-between"> */}
-                  {/* <div className="flex items-center gap-[6px] lg:gap-3">
-                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600] ">Tue, 24</p>
-                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor font-[400] ">10:00 AM</p> */}
-                    {/* <div>
-                      <span className="w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellowColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]">
-                        <img src={videoIcon} alt="" />
-                      </span>
-                    </div> */}
-                  {/* </div>
-                </div> */}
-
-                {/* <div className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full">
-                  Consultation
-                </div> */}
-
-                {/* <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]">
-                  <img src={avatarIcon} alt="" />
-                  <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">
-                    Anikesh Kulal
-                  </h4>
-                </div> */}
-
-
-              </div>
-            </div>
-          {/* </div> */}
+        <EffectiveCard/>
         </div>
       </section>
       {/* Feature Section End */}
@@ -241,7 +193,7 @@ const Home = () => {
             </div>
 
             <div className="w-full md:w-1/2">
-              <h2 className='heading'>Most Questions by our beloved patients</h2>
+              <h2 className='heading'>Most Questions by our beloved Students</h2>
               <FaqList />
             </div>
           </div>

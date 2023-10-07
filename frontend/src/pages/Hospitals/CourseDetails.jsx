@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import doctorImg from '../../assets/images/doctor-img02.png'
 import starIcon from '../../assets/images/Star.png'
-import DoctorAbout from './CourseAbout'
+// import DoctorAbout from './CourseAbout'
 import Feedback from './Feedback'
 import SidePanel from './SidePanel'
 import video1 from '../../assets/images/vid-1.mp4'
+import CourseTest from './CourseTest'
+import CourseAbout from './CourseAbout'
 
 const DoctorDetails = () => {
 
@@ -45,14 +47,19 @@ const DoctorDetails = () => {
             <button onClick={()=>setTab('about')} className={`${tab==='about' && 'border-b border-solid border-primaryColor'} py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>About</button>
 
             <button onClick={()=>setTab('feedback')} className={`${tab==='feedback' && 'border-b border-solid border-primaryColor'} py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>Feedback</button>
+
+            <button onClick={()=>setTab('test')} className={`${tab==='test' && 'border-b border-solid border-primaryColor'} py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>Test</button>
           </div>
 
           <div className="mt-[50px]">
             {
-              tab==='about' && <DoctorAbout/>
+              tab==='about' && <CourseAbout/>
             }
             {
               tab==='feedback' && <Feedback/>
+            }
+            {
+              tab==='test' && <CourseTest/>
             }
           </div>
 

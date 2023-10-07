@@ -1,5 +1,5 @@
 import React from 'react'
-import DoctorCard from '../../components/Hospitals/HospitalCard'
+import DoctorCard from '../../components/Course/HospitalCard'
 import {doctors} from '../../assets/data/courses'
 import Testimonial from '../../components/Testimonials/Testimonial'
 

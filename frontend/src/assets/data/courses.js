@@ -11,7 +11,7 @@ export const doctors = [
   {
     id: "01",
     name: "Web Development",
-    specialization: " INR 2999",
+    specialization: "INR 2999 (Audio)",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg01,
@@ -21,7 +21,7 @@ export const doctors = [
   {
     id: "02",
     name: "App Development",
-    specialization: "INR 2999",
+    specialization: "INR 3999",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg02,

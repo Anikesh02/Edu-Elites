@@ -12,7 +12,7 @@ import Appointment from '../pages/Hospitals/Enrollment'
 import {Routes, Route} from 'react-router-dom'
 import Payment from '../pages/Hospitals/Payment'
 import PricingCard from '../components/PricingCard'
-import Dashboard from '../components/teacherDashboard/Dashboard'
+import Dashboard from '../components/Dashboard/Dashboard'
 import CreateCourse from '../components/teacherDashboard/CreateCourse'
 import CourseDetail from '../components/teacherDashboard/CourseDetail'
 import CardApp from '../CardApp'
@@ -41,6 +41,9 @@ const Routers = () => {
     <Route path='/cardapp' element={<CardApp/>}></Route>
     <Route path='/test' element={<TestApp/>}></Route>
     <Route path='/charts' element={<Piechart/>}></Route>
+    <Route path='/dashboard' element={<Dashboard/>}></Route>
+
+
 
 
     

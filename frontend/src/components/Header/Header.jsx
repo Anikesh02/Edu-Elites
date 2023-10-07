@@ -37,42 +37,16 @@ const Header = () => {
       path: "/charts",
       display: "Your Progress",
     },
+    
+    {
+      path: "/create-course",
+      display: "Create Course",
+    },
+    {
+      path: "/personal",
+      display: "Recommendations",
+    },
   ];
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, displayName, photoURL, email } = user;
-
-        getParameters(user.uid).then((data) => {
-          updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role, learningStyle: data.learningStyle });
-        });
-      } else {
-        updateUser(null);
-      }
-    });
-    return () => unsubscribe();
-  }, [updateUser]);
-
-  if (user) {
-    if (user.role != "Student") {
-      navLinks = [
-        {
-          path: "/home",
-          display: "Home",
-        },
-        {
-          path: "/myCourses",
-          display: "My Courses",
-        },
-        {
-          path: "/create-course",
-          display: "Create Course",
-        }
-
-      ];
-  }
-}
 
   const headerRef = useRef(null)
   const menuRef = useRef(null)

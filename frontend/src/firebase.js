@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, setDoc, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, setDoc, doc, getDoc, collection, addDoc, updateDoc } from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 const firebaseConfig = {
@@ -18,7 +18,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-async function createUser(name, email, password, photo, gender, role) {
+async function createUser(name, email, password, photo, gender, role, age) {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
@@ -45,7 +45,8 @@ async function createUser(name, email, password, photo, gender, role) {
       name: name,
       gender: gender,
       role: role,
-      profile: photoURL
+      profile: photoURL,
+      age: age,
     };
 
     await setDoc(doc(db, 'users', userCredential.user.uid), customUserData);
@@ -71,12 +72,44 @@ async function logInUser(email, password) {
   }
 }
 
+async function getParameters(uid) {
+  const docRef = doc(db, 'users', uid);
+  const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      return docSnap.data();
+    } else {
+      console.log("No such document!");
+      return null;
+    }
+}
+
 
 async function uploadCourse(course) {
   try {
-    const courseRef = doc(db, 'courses', course.id);
-    await setDoc(courseRef, course);
-    return courseRef;
+    // Use the 'courses' collection reference
+    const coursesCollection = collection(db, 'courses');
+
+    // Add a new document with an auto-generated ID
+    const newCourseRef = await addDoc(coursesCollection, { title: course.title, content: course.description });
+
+    console.log('New course added with ID: ', newCourseRef.id);
+
+    const thumbnailRef = ref(storage, `course_thumbnails/${newCourseRef.id}`);
+    const snapshot = await uploadBytes(thumbnailRef, course.images);
+    const thumbnailURL = await getDownloadURL(snapshot.ref);
+
+    const videoRef = ref(storage, `course_videos/${newCourseRef.id}`);
+    const snapshot2 = await uploadBytes(videoRef, course.videos);
+    const videoURL = await getDownloadURL(snapshot2.ref);
+
+    await updateDoc(doc(db, 'courses', newCourseRef.id), {
+      thumbnail: thumbnailURL,
+      video: videoURL
+    });
+
+    // Return the newly created document reference
+    return newCourseRef;
   } catch (error) {
     console.error("Error object:", error);
     const errorMessage = error?.message || "An unknown error occurred";
@@ -85,5 +118,5 @@ async function uploadCourse(course) {
 }
 
 
-export { createUser, logInUser, auth , uploadCourse};
+export { createUser, logInUser, auth , uploadCourse, getParameters};
 export default app;

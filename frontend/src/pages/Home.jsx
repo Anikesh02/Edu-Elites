@@ -115,7 +115,7 @@ const Home = () => {
 
             <div className='py-[30px] px-5'>
               <div className="flex items-center justify-center">
-                {/* <img src={icon04} alt="" /> */}
+                <img src={icon01} alt="" />
               </div>
               <div className="mt-[30px]">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Course</h2>

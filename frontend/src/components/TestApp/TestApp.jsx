@@ -3,6 +3,8 @@ import { getFirestore, setDoc, doc, getDoc, collection, addDoc, updateDoc } from
 import { useUser } from '../../UserContext.jsx';
 import { db , updateCollection} from '../../firebase.js';
 import { Link } from 'react-router-dom';
+// import card from '../../assets/images/card.png'
+import pie from '../../assets/images/pie.png'
 
 
 const QuizComponent = () => {
@@ -99,10 +101,15 @@ const QuizComponent = () => {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-4 bg-gray-100 rounded-lg shadow-lg">
+    <div className='container'>
+      
+      <h1 className='heading text-center mt-5'>Let's check your intereset</h1>
+    <div className="w-full items-center justify-center mx-[10px] p-8 bg-{card} rounded-lg shadow-lg">
+      <div className='flex gap-[30px] justify-end'><img src={pie} alt="" className='w-[150px] h-[150px] mb-3 ml-[150px] mr-5' /></div>
+    
       {quizQuestions.map((question, index) => (
-        <div key={index} className="mb-4">
-          <p className="font-bold text-lg">{question}</p>
+        <div key={index} className="mb-9">
+          <p className="font-bold text-lg mb-4">{question}</p>
           {quizAnswers[index].map((answer, answerIndex) => (
             <div key={answerIndex} className="mb-2">
               <label className="flex items-center">
@@ -120,6 +127,7 @@ const QuizComponent = () => {
         </div>
       ))}
       <DominantLearnStyle />
+    </div>
     </div>
   );
 };

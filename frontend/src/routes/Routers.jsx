@@ -17,9 +17,9 @@ import CreateCourse from '../components/teacherDashboard/CreateCourse'
 import CourseDetail from '../components/teacherDashboard/CourseDetail'
 import CardApp from '../CardApp'
 import TestApp from '../components/TestApp/TestApp'
-import Chart from '../components/Charts/ChartComponent'
-import ChartComponent from '../components/Charts/ChartComponent'
+
 import Piechart from '../components/BarChart'
+import MyCourses from '../MyCourses'
 
 
 const Routers = () => {
@@ -42,6 +42,8 @@ const Routers = () => {
     <Route path='/test' element={<TestApp/>}></Route>
     <Route path='/charts' element={<Piechart/>}></Route>
     <Route path='/dashboard' element={<Dashboard/>}></Route>
+    <Route path='/myCourses' element={<MyCourses/>}></Route>
+    
     
 
 

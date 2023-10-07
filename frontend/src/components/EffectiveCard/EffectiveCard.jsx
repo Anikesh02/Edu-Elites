@@ -23,7 +23,7 @@ const EffectiveCard = () => {
           </p>
         </div>
         {/* <img className='w-[50px] h-[50px]' src="learn-at-your-pace.gif" alt="Learn at Your Pace GIF" /> */}
-        <iframe className='w-[200px] h-[200px]' src="https://giphy.com/embed/JGMaGy5beukJ96I5Xw" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/savesoil-merry-christmas-lofi-girl-lofigirl-JGMaGy5beukJ96I5Xw"></a></p>
+        <iframe className='w-[200px] h-[200px]' src="https://giphy.com/embed/JGMaGy5beukJ96I5Xw" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       </div>
 
       <div className="topic left">
@@ -34,7 +34,7 @@ const EffectiveCard = () => {
           </p>
         </div>
         {/* <img src="chatbot.gif" alt="Chatbot GIF" /> */}
-        <iframe className='w-[200px] h-[200px]' src="https://giphy.com/embed/z4cAv0wUBbXLxw6ySb" width="480" height="274" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Kenesispro-robot-kenesis-kenesispro-z4cAv0wUBbXLxw6ySb"></a></p>
+        <iframe className='w-[200px] h-[200px]' src="https://giphy.com/embed/z4cAv0wUBbXLxw6ySb" width="480" height="274" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       </div>
     </div>
   );

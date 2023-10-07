@@ -42,12 +42,12 @@ const StudentDetails = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='text-[100px] heading ml-[80px] mt-9 mb-[50px]'>Hello, {user?.name}.</div>
+      <div className='text-[50px] heading ml-[80px] mt-9 mb-[30px]'>Hello, {user?.name}.</div>
       <div className='flex flex-col ml-9'>
         <div className='flex flex-col'>
-          <p className='ml-[50px] text-[24px] mt-3'>Email: {user?.email}</p>
-          <p className='ml-[50px] text-[24px] mt-3'>Age: {user?.age}</p>
-          <p className='ml-[50px] text-[24px] mb-9 mt-3'>Learning Style: {user?.learningStyle}</p>
+          <p className='ml-[50px] text-[22px] mt-3'>Email: {user?.email}</p>
+          <p className='ml-[50px] text-[22px] mt-3'>Age: {user?.age}</p>
+          <p className='ml-[50px] text-[22px] mb-9 mt-3'>Learning Style: {user?.learningStyle}</p>
         </div>
 
 

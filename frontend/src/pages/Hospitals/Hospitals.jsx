@@ -1,8 +1,9 @@
-import React from 'react'
-import DoctorCard from '../../components/Course/HospitalCard'
+import {React,useState} from 'react'
+import DoctorCard from '../../components/Course/CourseCard'
 import {doctors} from '../../assets/data/courses'
 import Testimonial from '../../components/Testimonials/Testimonial'
 import {getCourses} from '../../firebase.js'
+import { useEffect } from 'react'
 
 const Doctors = () => {
 

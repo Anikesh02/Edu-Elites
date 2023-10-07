@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DoctorCard from '../../components/Course/HospitalCard'
+import DoctorCard from '../Course/CourseCard'
 import {doctors} from '../../assets/data/courses'
 
 

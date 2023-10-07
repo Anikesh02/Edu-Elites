@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import { getFirestore, setDoc, doc, getDoc, collection, addDoc, updateDoc } from 'firebase/firestore';
+import { useUser } from '../../UserContext.jsx';
+import { db , updateCollection} from '../../firebase.js';
+
 
 const QuizComponent = () => {
+
+  const { user, updateUser } = useUser();
+
   const quizQuestions = [
     "When you're trying to understand a complex concept, do you find that you:",
     "What type of educational content engages you the most?",
@@ -25,6 +32,8 @@ const QuizComponent = () => {
     ["A. Through writing, such as essays or blog posts.", "B. Through verbal communication, like discussions or presentations.", "C. Through visual elements like diagrams or charts.", "D. I adapt my communication style based on the situation."],
   ];
 
+  const [numResponses, setNumResponses] = useState(0);
+
   const [learningStyles, setLearningStyles] = useState({
     Visual: 0,
     Auditory: 0,
@@ -36,10 +45,14 @@ const QuizComponent = () => {
 
     if (response === "1") {
       updatedLearningStyles["Visual"] += 1;
+      setNumResponses(numResponses + 1);
     } else if (response === "2") {
       updatedLearningStyles["Auditory"] += 1;
+      setNumResponses(numResponses + 1);
+
     } else if (response === "3") {
       updatedLearningStyles["Reading/Writing"] += 1;
+      setNumResponses(numResponses + 1);
     }
 
     setLearningStyles(updatedLearningStyles);
@@ -50,16 +63,43 @@ const QuizComponent = () => {
     null
   );
 
-  // Function to save answers as an object and log it to the console
   const saveAnswers = () => {
     const answersObject = {};
 
+    console.log(user?.uid);
+
+    if (!user || !user.uid) {
+        console.error("User or user ID is null or undefined.");
+        return; // Stop execution if user or user ID is not available
+    }
+
+    const docRef = doc(db, "users", user.uid);
+
+    updateDoc(docRef, { learningStyle: dominantStyle });
+
     quizQuestions.forEach((question, index) => {
-      answersObject[question] = quizAnswers[index][learningStyles[dominantStyle] - 1];
+        answersObject[question] = quizAnswers[index][learningStyles[dominantStyle] - 1];
     });
 
     console.log(answersObject);
-  };
+};
+
+
+  const DominantLearnStyle = () => {
+    if (numResponses === 9) {
+      return (
+        <div className="mt-4">
+          <p className="font-bold text-lg">Your dominant learning style is {dominantStyle}!</p>
+          <button
+            onClick={saveAnswers}
+            className="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-lg"
+          >
+            Save Answers
+          </button>
+        </div>
+      );
+    }
+  }
 
   return (
     <div className="max-w-xl mx-auto p-4 bg-gray-100 rounded-lg shadow-lg">
@@ -82,9 +122,7 @@ const QuizComponent = () => {
           ))}
         </div>
       ))}
-      <div className="mt-4">
-        <p className="font-bold text-xl">Your Dominant Learning Style is: {dominantStyle}</p>
-      </div>
+      <DominantLearnStyle />
     </div>
   );
 };

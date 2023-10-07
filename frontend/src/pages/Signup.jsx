@@ -24,7 +24,8 @@ const Signup = () => {
     password: '',
     photo: selectedFile,
     gender: '',
-    role: 'Student'
+    role: 'Student',
+    age:''
   })
 
   const handleInputChange = e => {
@@ -41,11 +42,11 @@ const Signup = () => {
     e.preventDefault();
     
     try {
-      const { name, email, password, gender, role } = formData;
+      const { name, email, password, gender, role, age } = formData;
       const file = selectedFile;
 
       console.log(email, password);
-      const loggedInUser = await createUser(name, email, password, file, gender, role);
+      const loggedInUser = await createUser(name, email, password, file, gender, role, age);
       if (loggedInUser) {
         updateUser(loggedInUser);
         navigate('/home');
@@ -111,6 +112,8 @@ const Signup = () => {
               </label>
             </div>
 
+            <div className="flex flex-row">
+
             <div className="mb-5 flex items-center gap-3">
               <figure className="w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center">
                 <img src={avatar} alt="" className='w-full rounded-full' />
@@ -120,6 +123,11 @@ const Signup = () => {
                 <input type="file" name='photo' id='customFile' onChange={handleFileInputChange} accept='.jpg, .png' className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer' />
                 <label htmlFor="customFile" className='absolute top-0 left-0 w-full h-full flex items-center px-[0.75rem] py-[0.375rem] text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold rounded-lg truncate cursor-pointer'>Upload Photo</label>
               </div>
+            </div>
+            <div className='mt-3 ml-9'>
+            <label className='text-headingColor font-bold text-[16px] leading-7 ml-5'> Age:</label>
+            <input type="age" placeholder='Enter your Age' name='age' value={formData.age} onChange={handleInputChange}  className=' border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  ml-3' required />
+            </div>
             </div>
 
             <div className="mt-7">

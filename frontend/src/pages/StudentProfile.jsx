@@ -15,8 +15,11 @@ const StudentDetails = () => {
     <div className='flex flex-col'>
         <div className='heading ml-[50px]'>Student Details:</div>
           <div className='flex flex-col'>
-            <div className='flex flex-col'>
+            <div className='flex flex-row'>
               <div className='heading ml-[50px]'>Name:</div>
+              <div className=''></div>
+
+
               <div className='heading ml-[50px]'>Email:</div>
               <div className='heading ml-[50px]'>Phone:</div>
             </div>

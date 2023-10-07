@@ -42,7 +42,7 @@ const DoctorAbout = () => {
             {/* <span className="text-yellowColor text-[15px] leading-6 font-semibold">{formateDate('05-13-2008')} - {formateDate('03-04-2010')}</span> */}
             <span className="text-yellowColor text-[15px] leading-6 font-semibold">+917400115591</span>
             <p className='text-[16px] leading-6 font-medium text-textColor'>Mr. Shekhar</p>
-            <p className='text-[14px] leading-6 font-medium text-textColor'>Hospital Staff</p>
+            <p className='text-[14px] leading-6 font-medium text-textColor'> Staff</p>
 
 
         </li>
@@ -51,7 +51,7 @@ const DoctorAbout = () => {
             {/* <span className="text-yellowColor text-[15px] leading-6 font-semibold">{formateDate('05-13-2008')} - {formateDate('03-04-2010')}</span> */}
             <span className="text-yellowColor text-[15px] leading-6 font-semibold">+918255745851</span>
             <p className='text-[16px] leading-6 font-medium text-textColor'>Mr. Patil</p>
-            <p className='text-[14px] leading-6 font-medium text-textColor'>Hospital Support</p>
+            <p className='text-[14px] leading-6 font-medium text-textColor'> Support</p>
 
 
         </li>

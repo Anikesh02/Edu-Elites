@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from '../pages/Home'
-import Services from '../pages/Services'
+import Services from '../pages/Courses'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Contact from '../pages/Contact'
@@ -17,6 +17,9 @@ import CreateCourse from '../components/teacherDashboard/CreateCourse'
 import CourseDetail from '../components/teacherDashboard/CourseDetail'
 import CardApp from '../CardApp'
 import TestApp from '../components/TestApp/TestApp'
+import Chart from '../components/Charts/ChartComponent'
+import ChartComponent from '../components/Charts/ChartComponent'
+import Piechart from '../components/BarChart'
 
 
 const Routers = () => {
@@ -37,6 +40,8 @@ const Routers = () => {
     <Route path='/studentProfile' element={<StudentProfile/>}></Route>
     <Route path='/cardapp' element={<CardApp/>}></Route>
     <Route path='/test' element={<TestApp/>}></Route>
+    <Route path='/charts' element={<Piechart/>}></Route>
+
 
     
     

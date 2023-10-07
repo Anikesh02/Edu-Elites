@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 import About from '../components/About/About'
 import ServiceList from '../components/Services/ServiceList'
-import DoctorList from '../components/Hospitals/HospitalList'
+import DoctorList from '../components/Hospitals/CourseList'
 import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonials/Testimonial'
 import { useEffect } from 'react'
@@ -55,7 +55,7 @@ const Home = () => {
                 <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help our students to achieve their dream college and great life.</h1>
                 <p className='text__para'>
                 Educare was founded on a better model of care one designed around students needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.</p>
-                <Link to='/appointment'><button className='btn'>Select Courses</button></Link>
+                <Link to='/doctors'><button className='btn'>Select Courses</button></Link>
 
               </div>
 

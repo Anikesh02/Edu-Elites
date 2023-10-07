@@ -34,7 +34,7 @@ const Header = () => {
       display: "Take Test",
     },
     {
-      path: "/charts",
+      path: "/studentProfile",
       display: "Your Progress",
     },
     

@@ -185,7 +185,7 @@ const Home = () => {
       </section>
       {/* Great Doctors End */}
 
-      {/* FAQ Section  */}
+      {/* FAQ Section 
       <section>
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
@@ -198,7 +198,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* FAQ Section End */}
 
       {/* testimonial  */}

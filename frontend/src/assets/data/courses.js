@@ -50,8 +50,8 @@ export const doctors = [
   },
   {
     id: "05",
-    name: "Wockhardt Hospital",
-    specialization: "Mental Health",
+    name: "Cybersec Course",
+    specialization: "Mental cyber",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg03,

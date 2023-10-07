@@ -39,7 +39,7 @@ const Testimonial = () => {
                             </div>
                         </div>
                     </div>
-                    <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>I have taken medical services from them. They treat so well and they are providing the best medical services.</p>
+                    <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>I have taken educational services from them. They taught me so well and they are providing the best personalized courses.</p>
                 </div>
             </SwiperSlide>
 
@@ -58,7 +58,7 @@ const Testimonial = () => {
                             </div>
                         </div>
                     </div>
-                    <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>I have taken medical services from them. They treat so well and they are providing the best medical services.</p>
+                    <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>I have taken educational services from them. They taught me so well and they are providing the best personalized courses.</p>
                 </div>
             </SwiperSlide>
 
@@ -77,7 +77,7 @@ const Testimonial = () => {
                             </div>
                         </div>
                     </div>
-                    <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>I have taken medical services from them. They treat so well and they are providing the best medical services.</p>
+                    <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>I have taken educational services from them. They taught me so well and they are providing the best personalized courses.</p>
                 </div>
             </SwiperSlide>
 

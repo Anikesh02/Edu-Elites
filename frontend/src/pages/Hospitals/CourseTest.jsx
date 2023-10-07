@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Define initial parameters for multiple skills (questions in the quiz)
-const numQuestions = 3;
+const numQuestions = 5;
 const PL0 = [0.4];
 const PT = [0.3];
 const PS = [0.1];
@@ -9,19 +9,29 @@ const PS = [0.1];
 // Define the quiz questions and correct answers
 const quizQuestions = [
   {
-    question: 'What is the capital of France?',
-    options: ['London', 'Berlin', 'Paris', 'Madrid'],
-    correctAnswer: 'Paris',
+    question: 'Which of the following programming languages is commonly used for Android app development?',
+    options: ['Swift', 'Java', 'C#', 'Python'],
+    correctAnswer: 'Java',
   },
   {
-    question: 'Which programming language is known for its readability?',
-    options: ['Python', 'Java', 'C++', 'JavaScript'],
-    correctAnswer: 'Python',
+    question: 'What does API stand for in the context of app development?',
+    options: ['Application Programming Interface', 'Advanced Programming Interface', 'Application Process Interface', 'Advanced Process Interface'],
+    correctAnswer: 'Application Programming Interface',
   },
   {
-    question: 'How many planets are there in our solar system?',
-    options: ['7', '8', '9', '10'],
-    correctAnswer: '8',
+    question: 'Which component in Android is responsible for managing the user interface and interaction with the user?',
+    options: [' Service', 'Content Provider', 'Activity', 'BroadcastReceiver'],
+    correctAnswer: 'Activity',
+  },
+  {
+    question: 'In iOS app development, what is Interface Builder used for?',
+    options: [' Writing Swift code', 'Designing user interfaces', 'Managing data storage', ' Debugging the app'],
+    correctAnswer: 'Designing user interfaces',
+  },
+  {
+    question: 'What is the purpose of the manifest file in Android app development?',
+    options: [' Storing user preferences', 'Defining app permissions and components', 'Managing database connections', 'Controlling app navigation'],
+    correctAnswer: 'Defining app permissions and components',
   },
 ];
 
@@ -86,15 +96,15 @@ function CourseTest() {
       {knowledgeStates.map((knowledgeState, index) => {
         if (knowledgeState <= 0.2) {
           return (
-            <p className='mb-7 text-[20px]' key={index}>You have mastered Question {index + 1}</p>
+            <p className='mb-7 text-[20px]' key={index}>You have mastered this concept {index + 1}</p>
           );
         } else if (knowledgeState >= 0.8) {
           return (
-            <p className='mb-5 text-[20px]' key={index}>You need more practice with Question {index + 1}</p>
+            <p className='mb-5 text-[20px]' key={index}>You need more practice with this concept {index + 1}</p>
           );
         } else {
           return (
-            <p className='mb-5 text-[20px]' key={index}>You are making progress with Question {index + 1}</p>
+            <p className='mb-5 text-[20px]' key={index}>You are making progress with this concept {index + 1}</p>
           );
         }
       })}

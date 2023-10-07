@@ -37,13 +37,13 @@ function Chatbot() {
       <div className="flex">
         <input
           type="text"
-          className="flex-1 p-2 border rounded-lg outline-none"
+          className="flex-1 p-2 border rounded-lg outline-none mr-2" // Adjust width with 'flex-1' class
           placeholder="Type your message..."
           value={message}
           onChange={handleInputChange}
         />
         <button
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg ml-2"
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg"
           onClick={handleSendMessage}
         >
           Send

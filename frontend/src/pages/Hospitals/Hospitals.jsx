@@ -2,8 +2,28 @@ import React from 'react'
 import DoctorCard from '../../components/Hospitals/HospitalCard'
 import {doctors} from '../../assets/data/courses'
 import Testimonial from '../../components/Testimonials/Testimonial'
+import {getCourses} from '../../firebase.js'
 
 const Doctors = () => {
+
+
+  
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    // Fetch courses from both JSON file and database
+    Promise.all([getCourses(), Promise.resolve(doctors)])
+      .then(([dbCourses, jsonCourses]) => {
+        // Combine the courses from the database and the JSON file
+        const combinedCourses = jsonCourses.concat(dbCourses);
+        setCourses(combinedCourses);
+      })
+      .catch((error) => {
+        console.error('Error fetching courses:', error);
+      });
+  }, []);
+
+
   return  <>
   <section className='bg-[#fff9ea]'>
     <div className="container text-center">
@@ -21,6 +41,8 @@ const Doctors = () => {
         {doctors.map((doctor)=>(
         <DoctorCard key={doctor.id} doctor={doctor}/>
         ))}
+        { console.log(doctors) }
+
     </div>
     </div>
   </section>

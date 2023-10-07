@@ -19,10 +19,10 @@ function Barchart() {
             },
           ]}
           options={{
-            title: {
-              text: "BarChart",
-              style: { fontSize: 20 },
-            },
+            // title: {
+            //   text: "BarChart",
+            //   style: { fontSize: 20 },
+            // },
 
             subtitle: {
               // text: "This is BarChart Graph",

@@ -105,7 +105,9 @@ const QuizComponent = () => {
       
       <h1 className='heading text-center mt-5'>Let's check your intereset</h1>
     <div className="w-full items-center justify-center mx-[10px] p-8 bg-{card} rounded-lg shadow-lg">
-      <div className='flex gap-[30px] justify-end'><img src={pie} alt="" className='w-[150px] h-[150px] mb-3 ml-[150px] mr-5' /></div>
+      <div className='flex gap-[30px] justify-end'>
+        <img src={pie} alt="" className='w-[450px] h-[450px] mb-3 ml-[150px] mr-5' />
+        </div>
     
       {quizQuestions.map((question, index) => (
         <div key={index} className="mb-9">

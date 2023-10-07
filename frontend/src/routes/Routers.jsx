@@ -21,6 +21,10 @@ import TestApp from '../components/TestApp/TestApp'
 import Piechart from '../components/BarChart'
 import CourseList from '../components/Course/CourseList'
 import PersonalizedRecommendations from '../Recommendations/PersonalizedRecommendations'
+import EffectiveCard from '../components/EffectiveCard/EffectiveCard'
+// import Chatbot from '../components/Chatbot/Chatbot'
+// import ChatbotMain from '../components/Chatbot/ChatbotMain'
+import ChatInterface from '../components/Chatbot/ChatInterface'
 // import MyCourses from '../MyCourses'
 
 
@@ -46,6 +50,11 @@ const Routers = () => {
     <Route path='/dashboard' element={<Dashboard/>}></Route>
     <Route path='/myCourses' element={<CourseList/>}></Route>
     <Route path='/personal' element={<PersonalizedRecommendations/>}></Route>
+    <Route path='/effective' element={<EffectiveCard/>}></Route>
+    <Route path='/chatbot' element={<ChatInterface/>}></Route>
+
+
+    
 
     
     

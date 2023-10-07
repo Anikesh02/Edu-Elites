@@ -70,8 +70,10 @@ function PersonalizedRecommendations() {
   }  
   const getPersonalizedRecommendations = ({ ls }) => {
     // Filter courses by learning type
-    const learningTypeCourses = coursesData.filter((course) => course.learning_type == ls);
+    console.log(ls)
 
+    const learningTypeCourses = coursesData.filter((course) => course.learning_type == ls);
+    console.log(learningTypeCourses)
     // Dummy calculation for recommendations (you can replace this with your actual logic)
     const recommendedCourses = learningTypeCourses.slice(0, 3); // Just take the first 3 for demonstration
 

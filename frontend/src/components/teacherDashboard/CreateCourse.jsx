@@ -44,22 +44,7 @@ function CreateCourse() {
         console.log(files);
 
 
-        // if (files) {
-        //     const imageFiles = [];
-
-        //     // Separate image files and video files
-        //     for (let i = 0; i < files.length; i++) {
-        //         const file = files[i];
-        //         if (file.type.startsWith("image")) {
-        //             imageFiles.push(file);
-        //         } else if (file.type.startsWith("video")) {
-        //             videoFiles.push(file);
-        //         }
-        //     }
-
-        //     // Update state with the new image and video files
-        //     setCourseImages([...courseImages, ...imageFiles]);
-        // }
+        
     };
     const handleFileUpload2 = (e) => {
         const files = e.target.files[0];
@@ -67,23 +52,7 @@ function CreateCourse() {
         console.log(files);
 
 
-        // if (files) {
-        //     const imageFiles = [];
-        //     const videoFiles = [];
-
-        //     // Separate image files and video files
-        //     for (let i = 0; i < files.length; i++) {
-        //         const file = files[i];
-        //         if (file.type.startsWith("image")) {
-        //             imageFiles.push(file);
-        //         } else if (file.type.startsWith("video")) {
-        //             videoFiles.push(file);
-        //         }
-        //     }
-
-        //     // Update state with the new image and video files
-        //     setCourseVideos([...courseVideos, ...videoFiles]);
-        // }
+        
     };
 
     const handleCourseCreation = () => {
@@ -110,9 +79,6 @@ function CreateCourse() {
             uploadCourse(newCourse).then(() => {
                 console.log("Course uploaded successfully");
             });
-
-
-
 
 
             setCourses([...courses, newCourse]);
@@ -163,39 +129,7 @@ function CreateCourse() {
                             className="mt-4"
                             onChange={handleFileUpload2}
                         />
-                        {/* <div className="mt-2">
-                            {courseImages.length > 0 && (
-                                <div>
-                                    <h3 className="text-lg font-semibold">Uploaded Images:</h3>
-                                    <div className="flex flex-wrap mt-2">
-                                        {courseImages.map((image, video, index) => (
-                                            <img
-                                                src={URL.createObjectURL(image, video)}
-                                                alt={`Image ${index + 1}`}
-                                                className="w-24 h-24 rounded-md mr-2 mb-2"
-                                                key={index}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                            {courseVideos.length > 0 && (
-                                <div className="mt-4">
-                                    <h3 className="text-lg font-semibold">Uploaded Videos:</h3>
-                                    <div className="flex flex-wrap mt-2">
-                                        {courseVideos.map((video, index) => (
-                                            <video
-                                                controls
-                                                src={URL.createObjectURL(video)}
-                                                alt={`Video ${index + 1}`}
-                                                className="w-24 h-24 rounded-md mr-2 mb-2"
-                                                key={index}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </div> */}
+                        
                     </div>
 
                 </div>
@@ -207,7 +141,7 @@ function CreateCourse() {
                                 <div className="flex-shrink-0">
                                     {course.images.length > 0 && (
                                         <img
-                                            src={course.images[0]} // Display the first uploaded image
+                                            src={course.images[0]} 
                                             alt={`Image ${index + 1}`}
                                             className="w-20 h-20 rounded-md"
                                         />
@@ -219,7 +153,7 @@ function CreateCourse() {
                                 </div>
                             </div>
                             <div className="mt-4">
-                                {/* Add additional course details or media here */}
+                               
                             </div>
                         </div>
                     ))}

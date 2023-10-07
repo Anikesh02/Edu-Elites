@@ -14,7 +14,7 @@ function Barchart() {
           height={500}
           series={[
             {
-              // name: "Social Media Subscriber",
+              
               data: [65, 67, 32, 98, 23, 51, 24],
             },
           ]}

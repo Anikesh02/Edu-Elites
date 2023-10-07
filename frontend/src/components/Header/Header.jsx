@@ -14,8 +14,8 @@ const navLinks = [
     display: "Explore",
   },
   {
-    path: "/services",
-    display: "Your Courses",
+    path: "/myCourses",
+    display: "My Courses",
   },
   {
     path: "/test",

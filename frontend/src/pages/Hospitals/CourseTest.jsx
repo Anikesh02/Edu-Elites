@@ -86,15 +86,15 @@ function CourseTest() {
       {knowledgeStates.map((knowledgeState, index) => {
         if (knowledgeState <= 0.2) {
           return (
-            <p className='mb-5 text-[22px]' key={index}>You have mastered Question {index + 1}</p>
+            <p className='mb-7 text-[20px]' key={index}>You have mastered Question {index + 1}</p>
           );
         } else if (knowledgeState >= 0.8) {
           return (
-            <p className='mb-5' key={index}>You need more practice with Question {index + 1}</p>
+            <p className='mb-5 text-[20px]' key={index}>You need more practice with Question {index + 1}</p>
           );
         } else {
           return (
-            <p className='mb-5' key={index}>You are making progress with Question {index + 1}</p>
+            <p className='mb-5 text-[20px]' key={index}>You are making progress with Question {index + 1}</p>
           );
         }
       })}

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useUser } from '../UserContext.jsx';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase.js'
+import { auth, getParameters } from '../firebase.js'
 // Sample course data (replace this with your actual data)
+
+
 const coursesData = [
   {
     course_id: 1,
@@ -46,7 +48,7 @@ function PersonalizedRecommendations() {
         const { uid, displayName, photoURL, email } = user;
 
         getParameters(user.uid).then((data) => {
-          updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role });
+          updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role, learningStyle: data.learningStyle });
         });
       } else {
         updateUser(null);
@@ -61,7 +63,7 @@ function PersonalizedRecommendations() {
   // setLearningType(user?.learningType)
   console.log(user?.learningStyle)
 
-  let ls = "Visual"
+  let ls = ""
 
   if(user!=null){
     ls = user.learningStyle;

@@ -6,6 +6,7 @@ import icon01 from '../assets/images/icon01.png'
 import icon02 from '../assets/images/icon02.png'
 import icon03 from '../assets/images/icon03.png'
 import featureImg from '../assets/images/feature-img.png'
+// import icon4 from '../assets/images/adaptive.jpeg'
 import videoIcon from '../assets/images/video-icon.png'
 import avatarIcon from '../assets/images/avatar-icon.png'
 import faqImg from '../assets/images/faq-img.png'
@@ -106,7 +107,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
-            <h2 className='heading text-center'>Providing the best courses</h2>
+            <h2 className='heading text-center'>Our Features</h2>
             <p className='text__para text-center'>World-class care for elders. Our Health Service offers unmatched, expert teachers care.</p>
           </div>
 
@@ -114,7 +115,7 @@ const Home = () => {
 
             <div className='py-[30px] px-5'>
               <div className="flex items-center justify-center">
-                <img src={icon01} alt="" />
+                {/* <img src={icon04} alt="" /> */}
               </div>
               <div className="mt-[30px]">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Course</h2>

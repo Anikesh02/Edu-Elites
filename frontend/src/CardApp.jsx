@@ -20,4 +20,4 @@ function CardApp() {
   );
 }
 
-export default  CardApp;
+export default CardApp;

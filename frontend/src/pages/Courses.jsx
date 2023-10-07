@@ -2,7 +2,7 @@ import React from 'react'
 import { services } from '../assets/data/services'
 import ServiceCard from '../components/Services/ServiceCard'
 
-const Services = () => {
+const Courses = () => {
   return <section>
     <div className="container">
     <div className="xl:w-[470px] mx-auto leading-9">
@@ -19,4 +19,4 @@ const Services = () => {
   
 }
 
-export default Services
+export default Courses

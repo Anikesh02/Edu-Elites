@@ -9,19 +9,19 @@ const SidePanel = () => {
             <span className='text-[16px] leading-7 lg:text-22px] lg:leading-8 text-headingColor font-bold'>INR 2999</span>
         </div>
         <div className="mt-[30px]">
-                <p className="text__para mt-0 font-semibold text-headingColor">Available Time Slots:</p>
+                <p className="text__para mt-0 font-semibold text-headingColor">Per Week :</p>
                 <ul className="mt-3">
                     <li className="flex items-center justify-between mb-2">
                         <p className='text-[15px] leading-6 text-textColor font-semibold'>Sunday</p>
-                        <p className='text-[15px] leading-6 text-textColor font-semibold'>9:00 AM to 1:30 PM</p>
+                        <p className='text-[15px] leading-6 text-textColor font-semibold'></p>
                     </li>
                     <li className="flex items-center justify-between mb-2">
                         <p className='text-[15px] leading-6 text-textColor font-semibold'>Tuesday</p>
-                        <p className='text-[15px] leading-6 text-textColor font-semibold'>4:00 PM to 9:30 PM</p>
+                        <p className='text-[15px] leading-6 text-textColor font-semibold'></p>
                     </li>
                     <li className="flex items-center justify-between mb-2">
                         <p className='text-[15px] leading-6 text-textColor font-semibold'>Friday</p>
-                        <p className='text-[15px] leading-6 text-textColor font-semibold'>1:30 PM to 6:30 PM</p>
+                        <p className='text-[15px] leading-6 text-textColor font-semibold'></p>
                     </li>
                 </ul>
             </div>

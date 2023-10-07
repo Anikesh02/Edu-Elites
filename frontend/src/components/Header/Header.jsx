@@ -22,8 +22,8 @@ const navLinks = [
     display: "Take Test",
   },
   {
-    path: "/pricing",
-    display: "Buy Premium",
+    path: "/charts",
+    display: "Your Progress",
   },
 ];
 

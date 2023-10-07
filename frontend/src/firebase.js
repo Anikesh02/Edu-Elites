@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, setDoc, doc, getDoc, collection, addDoc, updateDoc } from 'firebase/firestore';
+import { getFirestore, setDoc, doc, getDoc, collection, addDoc, updateDoc, getDocs} from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 const firebaseConfig = {
@@ -120,6 +120,14 @@ async function uploadCourse(course) {
 
 const updateCollection = (docRef, data) => updateDoc(doc(db, 'users', docRef), data);
 
+const getCourses = async () => {
+  const coursesCollection = collection(db, 'courses');
+  const coursesSnapshot = await getDocs(coursesCollection);
+  const coursesData = coursesSnapshot.docs.map((doc) => doc.data());
+  console.log(coursesData);
+  return coursesData;
+}
 
-export { createUser, logInUser, auth , uploadCourse, getParameters, updateCollection, db};
+
+export { createUser, logInUser, auth , uploadCourse, getParameters, updateCollection, db, getCourses};
 export default app;

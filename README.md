@@ -21,6 +21,7 @@ Steps to run:
 1. Create a folder Test
 2. git clone "URL"
 3. cd Eldcare
-4. cd frontend
-5. npm i
-6. npm run dev
+4. run server.py
+5. cd frontend
+6. npm i
+7. npm run dev

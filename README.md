@@ -20,7 +20,7 @@ Steps to run:
 
 1. Create a folder Test
 2. git clone "URL"
-3. cd Eldcare
+3. cd Edu-Elites
 4. run server.py
 5. cd frontend
 6. npm i

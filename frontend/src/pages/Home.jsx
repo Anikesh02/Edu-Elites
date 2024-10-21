@@ -17,16 +17,16 @@ import ServiceList from '../components/Services/ServiceList'
 import DoctorList from '../components/Course/CourseList'
 import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonials/Testimonial'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useUser } from '../UserContext'
 import { auth } from '../firebase.js';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getParameters } from '../firebase.js';
 import EffectiveCard from '../components/EffectiveCard/EffectiveCard'
+import Chatbot from '../components/Chatbot';
 
 
 const Home = () => {
-
   const { user, updateUser } = useUser();
 
   useEffect(() => {
@@ -103,8 +103,13 @@ const Home = () => {
 
           </div>
         </div>
+                
       </section>
       {/* Hero Content end*/}
+      
+      <Chatbot />
+
+
       <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">

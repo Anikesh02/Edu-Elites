@@ -13,6 +13,8 @@
     "apexcharts": "^3.43.0",
     "chart.js": "^4.4.0",
     "chartjs-to-image": "^1.2.1",
+    "embla-carousel-react": "^8.3.0",
+    "firebase": "^10.14.0",
     "html-to-image": "^1.11.11",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",

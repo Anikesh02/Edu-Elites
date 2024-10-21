@@ -1,42 +1,86 @@
-import React from 'react'
-import starIcon from '../../assets/images/Star.png'
-import { Link } from 'react-router-dom'
-import { BsArrowRight } from 'react-icons/bs'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const CourseCard = ({ doctor }) => {
-
-    const { name, avgRating, totalRating, photo, specialization, totalPatients, hospital } = doctor
-
+const CourseCard = ({ doctor1, doctor2, doctor3, single = false }) => {
+  if (!single) {
+    const id1 = "/doctors/".concat(doctor1["id"]),
+      id2 = "/doctors/".concat(doctor2["id"]),
+      id3 = "/doctors/".concat(doctor3["id"]);
 
     return (
-        <div className='p-3 lg:p-5'>
-            <div>
-                <img src={photo} className="w-full" alt="" />
+      <div className="h-[554.54px] justify-center items-center gap-[47px] inline-flex">
+        <Link to={id1}>
+          <div className="w-[324.04px] h-[462.11px] relative">
+            <div className="w-[324.04px] h-[462.11px] left-0 top-0 absolute bg-white rounded-[32px] shadow" />
+            <img
+              className="w-[308.08px] h-[207.51px] left-[7.98px] top-[7.98px] absolute rounded-[22px]"
+              src={doctor1["img"]}
+            />
+            <div className="w-[124.51px] h-[48.69px] left-[177.98px] top-[190.75px] absolute bg-[#0067ff] rounded-[15px]" />
+            <div className="w-[279.34px] h-[30.33px] left-[23.15px] top-[278.54px] absolute text-black text-[24px] font-normal font-['Apple SD Gothic Neo']">
+              {doctor1["name"]}
             </div>
-            <h2 className="text-[10px] leading-[30px] lg:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">{name}</h2>
-            <div className="mt-2 lg:mt-4 flex items-center justify-between">
-                <span className='bg-[#CCF0F3] text-irisBlueColor py-1 px-2 lg:py-2 lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded'>{specialization}</span>
-
-                <div className="flex items-center gap-[6px]">
-                    {/* <p>Auditory</p> */}
-                    <span className='flex items-center gap-[6px] text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-semibold text-headingColor'><img src={starIcon} alt="" />{avgRating}</span>
-                    <span className='text-[14px] leading-6 lg:text-[16px] lg:leading-7 font--[400] text-textColor'>({totalRating})</span>
-                </div>
+            <div className="w-[279.34px] h-[30.33px] left-[23.15px] top-[324.84px] absolute text-black text-xs font-normal font-['Apple SD Gothic Neo']">
+              {doctor1["description"]}
             </div>
-
-            <div className="mt-[18px] lg:mt-5 flex items-center justify-between">
-                <div>
-                    <h3 className='text-[16px] leading-7 lg:text-[18px] lg:leading-[30px] font-semibold text-headingColor'>+{totalPatients} students</h3>
-                    <p className='text-[14px] leading-6 font-[400] text-textColor'>At {hospital}</p>
-                </div>
-
-                <Link to='/doctors/:id' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
-                    <BsArrowRight className='group-hover:text-white w-6 h-5' />
-                </Link>
+            <div className="w-[90.19px] h-[30.33px] left-[51.88px] top-[231.46px] absolute text-black text-s font-normal font-['Apple SD Gothic Neo']">
+              {doctor1["avgRating"]} ({doctor1["totalRating"]})
             </div>
+            <div className="w-[90.19px] h-[30.33px] left-[194.74px] top-[202.33px] absolute text-center text-[#f2f2f2] text-l font-normal font-['Apple SD Gothic Neo']">
+              {doctor1["price"]}
+            </div>
+            <div className="w-[24.74px] h-[24.74px] left-[20.75px] top-[233.05px] absolute" />
+          </div>
+        </Link>
+        <Link to={id2}>
+          <div className="w-[388.85px] h-[554.54px] relative">
+            <div className="w-[388.85px] h-[554.54px] left-0 top-0 absolute bg-white rounded-[32px] shadow" />
+            <img
+              className="w-[369.69px] h-[249.02px] left-[9.58px] top-[9.58px] absolute rounded-[22px]"
+              src={doctor2["img"]}
+            />
+            <div className="w-[149.41px] h-[58.42px] left-[213.58px] top-[228.90px] absolute bg-[#0067ff] rounded-[18px]" />
+            <div className="w-[335.21px] h-[36.39px] left-[27.77px] top-[334.26px] absolute text-black text-[32px] font-normal font-['Apple SD Gothic Neo']">
+              {doctor2["name"]}
+            </div>
+            <div className="w-[335.21px] h-[36.39px] left-[27.77px] top-[389.81px] absolute text-black text-l font-normal font-['Apple SD Gothic Neo']">
+              {doctor2["description"]}
+            </div>
+            <div className="w-[108.23px] h-[36.39px] left-[62.25px] top-[277.75px] absolute text-black text-xl font-normal font-['Apple SD Gothic Neo']">
+              {doctor2["avgRating"]} ({doctor2["totalRating"]})
+            </div>
+            <div className="w-[108.23px] h-[36.39px] left-[233.69px] top-[242.40px] absolute text-center text-[#f2f2f2] text-xl font-normal font-['Apple SD Gothic Neo']">
+              {doctor2["price"]}
+            </div>
+            <div className="w-[29.69px] h-[29.69px] left-[24.90px] top-[279.66px] absolute" />
+          </div>
+        </Link>
+        <Link to={id3}>
+          <div className="w-[324.04px] h-[462.11px] relative">
+            <div className="w-[324.04px] h-[462.11px] left-0 top-0 absolute bg-white rounded-[32px] shadow" />
+            <img
+              className="w-[308.08px] h-[207.51px] left-[7.98px] top-[7.98px] absolute rounded-[22px]"
+              src={doctor3["img"]}
+            />
+            <div className="w-[124.51px] h-[48.69px] left-[177.98px] top-[190.75px] absolute bg-[#0067ff] rounded-[15px]" />
+            <div className="w-[279.34px] h-[30.33px] left-[23.15px] top-[278.54px] absolute text-black text-[24px] font-normal font-['Apple SD Gothic Neo']">
+              {doctor3["name"]}
+            </div>
+            <div className="w-[279.34px] h-[30.33px] left-[23.15px] top-[324.84px] absolute text-black text-xs font-normal font-['Apple SD Gothic Neo']">
+              {doctor3["description"]}
+            </div>
+            <div className="w-[90.19px] h-[30.33px] left-[51.88px] top-[231.46px] absolute text-black text-s font-normal font-['Apple SD Gothic Neo']">
+              {doctor3["avgRating"]} ({doctor3["totalRating"]})
+            </div>
+            <div className="w-[90.19px] h-[30.33px] left-[194.74px] top-[202.33px] absolute text-center text-[#f2f2f2] text-l font-normal font-['Apple SD Gothic Neo']">
+              {doctor3["price"]}
+            </div>
+            <div className="w-[24.74px] h-[24.74px] left-[20.75px] top-[233.05px] absolute" />
+          </div>
+        </Link>
+      </div>
+    );
+  }
+};
 
-        </div>
-    )
-}
-
-export default CourseCard
+export default CourseCard;

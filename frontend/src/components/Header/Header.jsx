@@ -1,110 +1,94 @@
-import { useEffect, useRef } from 'react'
-import logo from '../../assets/images/logo.png'
-import userImg from '../../assets/images/avatar-icon.png'
-import { NavLink, Link } from 'react-router-dom'
-import {BiMenu} from 'react-icons/bi';
-import { useUser } from '../../UserContext.jsx';
-
-
+import { useEffect, useRef } from "react";
+import logo from "../../assets/images/logo.png";
+import userImg from "../../assets/images/avatar-icon.png";
+import { NavLink, Link } from "react-router-dom";
+import { BiMenu } from "react-icons/bi";
+import { useUser } from "../../UserContext.jsx";
 
 const Header = () => {
-
   const { user, updateUser } = useUser();
 
-  
   let navLinks = [
     {
       path: "/home",
-      display: "Home",
+      display: "Home"
     },
     {
       path: "/doctors",
-      display: "Explore",
+      display: "Explore"
     },
     {
       path: "/myCourses",
-      display: "My Courses",
+      display: "Courses"
     },
     {
       path: "/test",
-      display: "Take Test",
+      display: "Test"
     },
     {
       path: "/studentProfile",
-      display: "Your Progress",
-    },
-    
-    {
-      path: "/create-course",
-      display: "Create Course",
+      display: "Progress"
     },
     {
       path: "/personal",
-      display: "Recommendations",
-    },
+      display: "Recommendations"
+    }
   ];
 
-  const headerRef = useRef(null)
-  const menuRef = useRef(null)
+  const menuRef = useRef(null);
 
-  const handleStickyHeader = () => {
-    window.addEventListener('scroll',()=>{
-      if(document.body.scrollTop > 80 || document.documentElement.scrollTop >80){
-        headerRef.current.classList.add('sticky__header')
-      }else{
-        headerRef.current.classList.remove('sticky__header')
-      }
-    })
-  }
-
-  useEffect(()=>{
-    handleStickyHeader()
-    return ()=> window.removeEventListener('scroll',handleStickyHeader)
-  })
-
-  const toggleMenu =()=> menuRef.current.classList.toggle('show__menu')
-
-    return <header className="header flex items-center" ref={headerRef}>
-    <div className="container">
-      <div className="flex items-center justify-between max-h-[30px]">
-        {/* Logo  */}
-        <div>
-          <img src={logo} alt="" />
-        </div>
-
-        {/* menu  */}
-        <div className="navigation" ref={menuRef} onClick={toggleMenu}>
-          <ul className="menu flex items-center gap-[2.7rem]">
-            {
-              navLinks.map((link, index) => <li key={index}>
-                <NavLink to={link.path} className={navClass => navClass.isActive ? 'text-primaryColor text-[16px] leading-7 font-[600]' : 'text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor'}>{link.display}</NavLink>
-              </li>)
-            }
-          </ul>
-        </div>
-
-        {/* nav right  */}
-        <div className="flex items-center gap-4">
-          <div className='hidden'>
-            <Link to='/'>
-              <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
-                <img src={userImg} className="w-full rounded-full" alt="" />
-              </figure>
+  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+  return (
+    <header className="w-[100%] flex top-5 fixed z-10 mx-auto justify-center items-center">
+      <div className="w-[90%] h-[60px] relative z-10 flex-inline">
+        <div className="w-[100%] h-[60px] rounded-[124px] shadow-inner backdrop-blur-xl">
+          <div className="w-[100%] h-[60px] mix-blend-overlay bg-white rounded-[124px] shadow-inner opacity-40 absolute -z-10" />
+          <div className="w-[100%] h-[60px] flex lg:justify-start justify-center items-center pl-[30px] pr-[15px] gap-2">
+            <img
+              className="w-[120px] h-[21px] absolute lg:relative"
+              src={logo}
+            />
+            <div
+              className="hidden lg:inline-flex w-[100%] h-[100%] pl-[5%] pr-2.5 py-2.5 rounded-[124px] justify-start items-center gap-[20px] navigation"
+              ref={menuRef}
+              onClick={toggleMenu}
+            >
+              <ul className="flex menu items-start gap-[2.7rem]">
+                {navLinks.map((link, index) => (
+                  <li key={index}>
+                    <NavLink
+                      to={link.path}
+                      className={navClass =>
+                        navClass.isActive
+                          ? "text-center text-black text-[1.1vw] font-normal font-['Apple SD Gothic Neo']"
+                          : "text-center text-black text-[1.1vw] font-normal font-['Apple SD Gothic Neo']"
+                      }
+                    >
+                      {link.display}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <Link to="/register">
+              <div className="hidden lg:block w-[8vw] h-[35px] top-[12px] z-10 rounded-[4vw] border border-[#0067ff] float-right">
+                <div className="text-center text-[#0067ff] text-[1.1vw] font-normal leading-[32px] font-['Apple SD Gothic Neo']">
+                  Sign up
+                </div>
+              </div>
+            </Link>
+            <Link to="/login">
+              <div className="hidden lg:block w-[8vw] h-[35px] top-[12px] z-10 bg-[#0067ff] rounded-[4vw] float-right">
+                <div className="text-center text-[#f2f2f2] text-[1.1vw] font-normal leading-[32px] font-['Apple SD Gothic Neo']">
+                  Log in
+                </div>
+              </div>
             </Link>
           </div>
-
-          <Link to='/login'>
-            <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">Login</button>
-          </Link>
-          <span className='md:hidden' onClick={toggleMenu}>
-            <BiMenu className='w-6 h-6 cursor-pointer' />
-          </span>
-
         </div>
       </div>
-    </div>
-  </header>
-
-}
+    </header>
+  );
+};
 
 export default Header;

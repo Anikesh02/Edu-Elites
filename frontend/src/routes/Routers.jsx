@@ -52,18 +52,6 @@ const Routers = () => {
     <Route path='/personal' element={<PersonalizedRecommendations/>}></Route>
     <Route path='/effective' element={<EffectiveCard/>}></Route>
     <Route path='/chatbot' element={<ChatInterface/>}></Route>
-
-
-    
-
-    
-    
-
-
-
-
-    
-    
   </Routes>
   
 }

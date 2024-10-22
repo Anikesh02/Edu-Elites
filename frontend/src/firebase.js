@@ -3,13 +3,23 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, up
 import { getFirestore, setDoc, doc, getDoc, collection, addDoc, updateDoc, getDocs} from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAyK70xth6l440oHApZYS9teQk4NsifngI",
+//   authDomain: "edu-portal-a1c70.firebaseapp.com",
+//   projectId: "edu-portal-a1c70",
+//   storageBucket: "edu-portal-a1c70.appspot.com",
+//   messagingSenderId: "71856380387",
+//   appId: "1:71856380387:web:7904fe2ef4bc2de4a6e8d6"
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAyK70xth6l440oHApZYS9teQk4NsifngI",
-  authDomain: "edu-portal-a1c70.firebaseapp.com",
-  projectId: "edu-portal-a1c70",
-  storageBucket: "edu-portal-a1c70.appspot.com",
-  messagingSenderId: "71856380387",
-  appId: "1:71856380387:web:7904fe2ef4bc2de4a6e8d6"
+  apiKey: "AIzaSyCDWKgRXyuK8w0JOoqPjelbXRexK-ueFn8",
+  authDomain: "rospl-b083a.firebaseapp.com",
+  projectId: "rospl-b083a",
+  storageBucket: "rospl-b083a.appspot.com",
+  messagingSenderId: "836595445519",
+  appId: "1:836595445519:web:1391a02b1e1b45ee48d87a",
+  measurementId: "G-FDGRJ6SGRC"
 };
 
 const app = initializeApp(firebaseConfig);

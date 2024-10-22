@@ -7,22 +7,23 @@ import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
 import featureImg from "../assets/images/feature-img.png";
 // import icon4 from '../assets/images/adaptive.jpeg'
-import videoIcon from "../assets/images/video-icon.png";
-import avatarIcon from "../assets/images/avatar-icon.png";
-import faqImg from "../assets/images/faq-img.png";
-import { Link } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
-import About from "../components/About/About";
-import ServiceList from "../components/Services/ServiceList";
-import CourseList from "../components/Course/CourseList";
-import FaqList from "../components/Faq/FaqList";
-import Testimonial from "../components/Testimonials/Testimonial";
-import { useEffect } from "react";
-import { useUser } from "../UserContext";
-import { auth } from "../firebase.js";
-import { onAuthStateChanged } from "firebase/auth";
-import { getParameters } from "../firebase.js";
-import EffectiveCard from "../components/EffectiveCard/EffectiveCard";
+import videoIcon from '../assets/images/video-icon.png'
+import avatarIcon from '../assets/images/avatar-icon.png'
+import faqImg from '../assets/images/faq-img.png'
+import { Link } from 'react-router-dom'
+import { BsArrowRight } from 'react-icons/bs'
+import About from '../components/About/About'
+import ServiceList from '../components/Services/ServiceList'
+import DoctorList from '../components/Course/CourseList'
+import FaqList from '../components/Faq/FaqList'
+import Testimonial from '../components/Testimonials/Testimonial'
+import { useEffect, useState } from 'react'
+import { useUser } from '../UserContext'
+import { auth } from '../firebase.js';
+import { onAuthStateChanged } from 'firebase/auth';
+import { getParameters } from '../firebase.js';
+import EffectiveCard from '../components/EffectiveCard/EffectiveCard'
+import Chatbot from '../components/Chatbot';
 
 // let current_scroll = 0;
 // addEventListener("scroll", event => {
@@ -513,6 +514,7 @@ const Home = () => {
             Get started!
           </div>
         </div>
+                
       </section>
 
       <section className="h-[90vh] p-0 flex justify-center">

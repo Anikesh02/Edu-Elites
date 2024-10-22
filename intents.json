@@ -1,0 +1,187 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi", 
+          "Hello", 
+          "Hey", 
+          "Good day", 
+          "How are you?"
+        ],
+        "responses": [
+          "Hello! How can I assist you today?", 
+          "Hi there, welcome! How can I help?", 
+          "Hey! Need help with something?","Hey:)"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": [
+          "Bye", 
+          "Goodbye", 
+          "See you later", 
+          "I'm leaving"
+        ],
+        "responses": [
+          "Goodbye! See you next time.", 
+          "Take care, come back soon!", 
+          "See you later, thanks for stopping by."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": [
+          "Thanks", 
+          "Thank you", 
+          "That's helpful", 
+          "Thanks a lot"
+        ],
+        "responses": [
+          "You're welcome!",
+           "Glad to help!", 
+           "No problem, anytime!"
+          ]
+      },
+      {
+        "tag": "course_information",
+        "patterns": [
+          "What courses are available?",
+          "What courses can I take?", 
+          "List of courses", "What can I learn here?"
+        ],
+        "responses": [
+          "We offer a range of courses in AI, Machine Learning, Web Development, Cybersecurity, and more. Feel free to explore!", 
+          "You can learn AI/ML, Web Development, Data Science, UI/UX, and other exciting topics."
+        ]
+      },
+      {
+        "tag": "adaptive_learning",
+        "patterns": [
+          "What is adaptive learning?",
+          "How does adaptive learning work?",
+          "Explain adaptive learning",
+          "Tell me about adaptive learning"
+        ],
+        "responses": [
+          "Adaptive learning tailors content to your learning pace by dynamically adjusting the course difficulty based on your progress.",
+          "Our platform uses algorithms like BKT and IRT to customize learning paths, ensuring personalized education."
+        ]
+      },
+      {
+        "tag": "learning_type_test",
+        "patterns": [
+          "How do I know my learning type?", 
+          "Is there a test to find my learning style?", 
+          "Can I take a test to know my learning type?"
+        ],
+        "responses": [
+          "You can take our initial learning type test to determine whether you're a Visual, Auditory, or Written learner by visiting the 'Learning Type Test' section."
+        ]
+      },
+      {
+        "tag": "track_progress",
+        "patterns": [
+          "How do I track my progress?", 
+          "Can I see my learning progress?", 
+          "How can I check my progress?", 
+          "What progress metrics do you offer?"
+        ],
+        "responses": [
+          "You can track your progress through detailed metrics provided in your dashboard, which include skill mastery, test scores, and course completion rates.", 
+          "Our platform offers metrics based on Bayesian Knowledge Tracing (BKT) and Item Response Theory (IRT) to give a clear view of your learning journey."
+        ]
+      },
+      {
+        "tag": "course_creation",
+        "patterns": [
+          "Can educators create courses?", 
+          "How do I create a course?", 
+          "How can I add a course?", 
+          "What tools are available for course creation?"
+        ],
+        "responses": [
+          "Yes! Educators can create online courses through our intuitive course creation tool, where you can add content, quizzes, and track student progress.", 
+          "You can create courses by accessing the 'Educator Dashboard' and using our course creation tool to design custom learning experiences."
+        ]
+      },
+      {
+        "tag": "difficulty_adjustment",
+        "patterns": [
+          "How does the platform adjust difficulty?", 
+          "Can the course difficulty change?", 
+          "Does the difficulty adapt to my learning?", 
+          "Is there dynamic difficulty adjustment?"
+        ],
+        "responses": [
+          "Yes, our platform uses algorithms like BKT and IRT to adjust the difficulty of the content in real time, based on your performance and learning pace.", 
+          "Course difficulty will automatically adjust as you progress, making the content easier or more challenging based on your understanding."
+        ]
+      },
+      {
+        "tag": "help",
+        "patterns": [
+          "help",
+          "I need help", 
+          "Can you assist me?", 
+          "How do I get help?", 
+          "I am stuck, what should I do?"
+        ],
+        "responses": [
+          "You can contact support at support@adaptivelearning.com or visit the 'Help' section for assistance.",
+          "Feel free to reach out to us through the support page, or send an email to our help team."
+        ]
+      },
+      {
+        "tag": "contact",
+        "patterns": [
+          "How do I contact you?", 
+          "What is your contact info?", 
+          "How can I reach support?", 
+          "Contact information"
+        ],
+        "responses": [
+          "You can contact us via email at contact@adaptivelearning.com or call us at +123-456-7890."
+        ]
+      },
+      {
+        "tag": "faq",
+        "patterns": [
+          "What features does this platform offer?", 
+          "What can I do here?", 
+          "Tell me about the platform features", 
+          "What is this platform about?"
+        ],
+        "responses": [
+          "This platform offers adaptive learning, personalized course creation, real-time progress tracking, and dynamic difficulty adjustments using advanced algorithms like BKT and IRT.", 
+          "Our platform allows educators to create online courses, and students can learn at their own pace with automatic difficulty adjustments."
+        ]
+      },
+      {
+        "tag": "feedback",
+        "patterns": [
+          "Where can I provide feedback?", 
+          "Can I submit feedback?", 
+          "How do I share my opinion?"
+        ],
+        "responses": [
+          "You can provide feedback through our 'Feedback' section, or email us at feedback@adaptivelearning.com.", 
+          "We value your input! Please share your feedback via the form available in the 'Feedback' section."
+        ]
+      },
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a joke", 
+          "Do you know any jokes?", 
+          "Can you make me laugh?", 
+          "Say something funny"
+        ],
+        "responses": [
+          "Why did the computer go to therapy? It had too many bugs!", 
+          "Why was the math book sad? It had too many problems."
+        ]
+      }
+    ]
+  }
+  
